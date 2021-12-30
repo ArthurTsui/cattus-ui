@@ -1,2 +1,2 @@
-# cat-ui
+# catus-ui
 Personal React UI library
