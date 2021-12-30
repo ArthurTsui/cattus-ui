@@ -1,5 +1,5 @@
 {
-  "name": "cattus-ui",
+  "name": "cattus",
   "version": "0.0.1",
   "description": "Personal React UI library",
   "main": "index.js",
@@ -24,6 +24,6 @@
     "bin/*.js"
   ],
   "bin": {
-    "cattus-ui-cli": "bin/cattus-ui-cli.js"
+    "cattus-cli": "bin/cattus-cli.js"
   }
 }
