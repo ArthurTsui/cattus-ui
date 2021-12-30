@@ -1,0 +1,27 @@
+{
+  "name": "cat-ui",
+  "version": "0.0.1",
+  "description": "Personal React UI library",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/ArthurTsui/cat-ui",
+    "type": "git"
+  },
+  "author": "LazyCat",
+  "license": "MIT",
+  "keywords": [
+    "raect",
+    "cat",
+    "ui"
+  ],
+  "homepage": "",
+  "bugs": "https://github.com/ArthurTsui/cat-ui/issues",
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "bin/*.js"
+  ],
+  "bin": {
+    "cat-ui-cli": "bin/cat-ui-cli.js"
+  }
+}
