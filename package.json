@@ -1,10 +1,10 @@
 {
-  "name": "catus-ui",
+  "name": "cattus-ui",
   "version": "0.0.1",
   "description": "Personal React UI library",
   "main": "index.js",
   "repository": {
-    "url": "https://github.com/ArthurTsui/catus-ui",
+    "url": "https://github.com/ArthurTsui/cattus-ui",
     "type": "git"
   },
   "author": "LazyCat",
@@ -13,16 +13,17 @@
     "raect",
     "cat",
     "ui",
-    "catus"
+    "catus",
+    "cattus"
   ],
   "homepage": "",
-  "bugs": "https://github.com/ArthurTsui/catus-ui/issues",
+  "bugs": "https://github.com/ArthurTsui/cattus-ui/issues",
   "files": [
     "index.js",
     "lib/*.js",
     "bin/*.js"
   ],
   "bin": {
-    "catus-ui-cli": "bin/catus-ui-cli.js"
+    "cattus-ui-cli": "bin/cattus-ui-cli.js"
   }
 }
