@@ -2,7 +2,7 @@
   "name": "cattus",
   "version": "0.0.1",
   "description": "Personal React UI library",
-  "main": "index.js",
+  "main": "",
   "repository": {
     "url": "https://github.com/ArthurTsui/cattus-ui",
     "type": "git"
@@ -11,19 +11,13 @@
   "license": "MIT",
   "keywords": [
     "raect",
-    "cat",
     "ui",
-    "catus",
     "cattus"
   ],
   "homepage": "",
   "bugs": "https://github.com/ArthurTsui/cattus-ui/issues",
-  "files": [
-    "index.js",
-    "lib/*.js",
-    "bin/*.js"
-  ],
+  "files": [],
   "bin": {
-    "cattus-cli": "bin/cattus-cli.js"
+    "cattus-cli": ""
   }
 }
