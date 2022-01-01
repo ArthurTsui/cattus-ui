@@ -295,7 +295,7 @@ module.exports = {
     'require-yield': 2, // 要求generator 函数内有 yield
     'linebreak-style': [2, 'unix'], // 强制使用一致的换行风格
 
-    // from ant-design
+    // from ant-design eslint
     'react/jsx-one-expression-per-line': 0,
     'react/prop-types': 0,
     'react/forbid-prop-types': 0,
