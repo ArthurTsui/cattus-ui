@@ -1,0 +1,12 @@
+stages:
+  - lint
+
+before_script:
+  - git fetch --all
+  - yarn add 
+
+lint:
+  stage: lint
+  script:
+    - yarn lint
+  only
