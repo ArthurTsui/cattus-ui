@@ -3,10 +3,9 @@ stages:
 
 before_script:
   - git fetch --all
-  - yarn add 
+  - yarn add
 
 lint:
   stage: lint
   script:
     - yarn lint
-  only
