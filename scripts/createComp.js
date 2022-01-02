@@ -14,7 +14,7 @@ const files = [
   },
   {
     fileName: `${componentName}.tsx`,
-    content: `import * as React from 'react'\n\nexport interface I${componentUpper}Props{}\n\nconst ${componentUpper}: React.FC<I${componentUpper}Props> = (props:I${componentUpper}Props) =>{\n\treturn <></>\n}\n\nexport default ${componentUpper}`
+    content: `import React from 'react'\nimport classNames from 'classnames'\n\nexport interface I${componentUpper}Props{}\n\nconst ${componentUpper}: React.FC<I${componentUpper}Props> = (props:I${componentUpper}Props) =>{\n\treturn <></>\n}\n\nexport default ${componentUpper}`
   },
   {
     fileName: `__tests__/${componentName}.test.tsx`,
