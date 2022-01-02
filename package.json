@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "Personal React UI library",
   "title": "Cattus UI",
-  "main": "",
+  "main": "index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "url": "https://github.com/ArthurTsui/cattus-ui",
     "type": "git"
   },
-  "author": "LazyCat <1518623937@gmail.com> (http://)",
+  "author": "LazyCat <1518623937@qq.com> (http://)",
   "license": "MIT",
   "keywords": [
     "raect",
@@ -21,7 +23,13 @@
   ],
   "homepage": "",
   "bugs": "https://github.com/ArthurTsui/cattus-ui/issues",
-  "files": [],
+  "files": [
+    "dist/*",
+    "lib",
+    "index.js",
+    "package.json",
+    "README.md"
+  ],
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
@@ -31,6 +39,16 @@
     "not IE 10"
   ],
   "scripts": {
+    "build": "concurrently \"yarn clear\" \"yarn build:prod\" \"yarn build:dev\" \"yarn build:tsc\" \"yarn build:es\" ",
+    "build-dev": "cross-env NODE_ENV=development webpack",
+    "build-prod": "cross-env NODE_ENV=production webpack",
+    "build-tsc": "tsc -p tsconfig.build.json --target ES5 --outDir lib",
+    "build:es": "concurrently \" cpr src/styles lib/styles -o\" \"cpr src/assets lib/assets -o\" ",
+    "clean": "concurrently \"rimraf dist\" \"rimraf lib\" ",
+    "docz-dev": "docz dev",
+    "docz-build": "docz build",
+    "docz-serve": "concurrently \"docz build\" \"docz serve\" ",
+    "test": "jest",
     "lint": "eslint src --fix --ext .ts,.tsx "
   },
   "husky": {
@@ -45,25 +63,58 @@
     ]
   },
   "dependencies": {
+    "classnames": "^2.3.1",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@hot-loader/react-dom": "^17.0.1",
+    "@types/classnames": "^2.3.1",
+    "@types/enzyme": "^3.10.11",
     "@types/jest": "^27.4.0",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "autoprefixer": "^10.4.1",
+    "babel-jest": "^27.4.5",
+    "babel-loader": "^8.2.3",
+    "cpr": "^3.0.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "docz": "^2.3.1",
     "enzyme": "^3.11.0",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.3.3",
+    "eslint-plugin-jest": "^25.3.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "file-loader": "^6.2.0",
+    "gatsby-plugin-sass": "^5.4.0",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
+    "make-dir-cli": "^3.0.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass": "^7.0.1",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss-loader": "^6.2.1",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "rimraf": "^3.0.2",
     "sass": "^1.45.2",
-    "typescript": "^4.5.4"
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
   }
 }
