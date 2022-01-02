@@ -28,7 +28,8 @@
     "lib",
     "index.js",
     "package.json",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "browserslist": [
     "> 0.5%",
