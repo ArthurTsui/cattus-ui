@@ -49,6 +49,7 @@
     "docz-dev": "docz dev",
     "docz-build": "docz build",
     "docz-serve": "concurrently \"docz build\" \"docz serve\" ",
+    "create-comp": "node scripts/createComp",
     "test": "jest",
     "lint": "eslint src --fix --ext .ts,.tsx "
   },
