@@ -2,11 +2,14 @@
 @import "../../node_modules/normalize-scss/sass/normalize";
 @include normalize();
 
+// resetStyles
+@import "./resetDefaultStyles";
+
 // variables
-@import "variables";
+@import "./variables";
 
 // mixins
-@import "mixins";
+@import "./mixins";
 
 // components
 
