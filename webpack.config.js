@@ -12,7 +12,7 @@ const config = {
   entry: ['./src/index.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: devMode ? 'cattus-ui.js' : 'cattus-ui.min.js',
+    filename: devMode ? 'cattus.js' : 'cattus.min.js',
     library: 'cattus-ui',
     libraryTarget: 'umd'
   },
@@ -53,10 +53,7 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              modules: {
-                auto: true,
-                localIdentName: '[path][name]__[local]'
-              },
+              modules: false,
               importLoaders: 2 // 一个css中引入了另一个css，也会执行之前两个loader，即postcss-loader和sass-loader
             }
           },
@@ -79,12 +76,12 @@ const config = {
       {
         test: /(\.(eot|ttf|woff|woff2)|font)$/,
         loader: 'file-loader',
-        options: { outputPath: 'fonts/' }
+        options: { outputPath: 'dist/assets/fonts/' }
       },
       {
         test: /\.(png|jpg|gif|svg|jpeg)$/,
         loader: 'file-loader',
-        options: { outputPath: 'images/' }
+        options: { outputPath: 'dist/assets/images/' }
       }
     ]
   },
@@ -98,8 +95,6 @@ const config = {
     alias: {}
   },
   plugins: [
-    // 该插件能够使得指定目录被忽略，从而使得打包变快，文件变小;下面忽略了包含’./locale/'该字段路径的文件目录,但是也使得我们使用的时候不能显示中文语言了，所以这个时候可以手动引入中文语言的目录
-    new webpack.IgnorePlugin(/\.\/locale/, /moment/),
     // 主要用于对打包好的js文件的最开始处添加版权声明
     new webpack.BannerPlugin(`cattus-ui ${pkg.version}`),
     // 将CSS提取到单独的文件中
