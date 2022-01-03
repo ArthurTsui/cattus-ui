@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode, CSSProperties, FC } from 'react'
 import classNames from 'classnames'
 
 export type ButtonType = 'primary' | 'ghost' | 'dashed' | 'link' | 'text' | 'default'
@@ -9,12 +9,14 @@ export type HtmlType = 'submit' | 'reset' | 'button' | undefined
 //基础props类型定义
 interface BaseButtonProps {
   type?: ButtonType
+  danger?: boolean
   shape?: ButtonShape
   size?: ButtonSize
   htmlType?: HtmlType
   icon?: ReactNode | string
   children?: ReactNode
   className?: string
+  style?: CSSProperties
 }
 
 type NativeButtonProps = BaseButtonProps & Omit<ButtonHTMLAttributes<HTMLElement>, 'type'> // 按钮类型，props类型定义
@@ -22,8 +24,8 @@ type AnchorButtonProps = BaseButtonProps & Omit<AnchorHTMLAttributes<HTMLElement
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps> // button最终的props类型定义
 
-const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const { className, type, shape, size, icon, children, href, htmlType, ...rest } = props
+const Button: FC<ButtonProps> = (props: ButtonProps) => {
+  const { className, type, danger, shape, size, icon, children, href, htmlType, style, ...rest } = props
 
   const sizeClassNameMap = { large: 'lg', middle: 'md', small: 'sm' }
   const sizeCls = size ? sizeClassNameMap[size] : undefined
@@ -32,8 +34,10 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     'cat-btn',
     {
       [`cat-btn-${type}`]: type,
+      [`cat-btn-danger`]: danger,
       [`cat-btn-${sizeCls}`]: sizeCls,
       [`cat-btn-${shape}`]: shape,
+      [`cat-btn-a`]: href,
       [`cat-btn-icon`]: icon
     },
     className
@@ -41,7 +45,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
   if (href) {
     return (
-      <a href={href} className={classes} {...rest}>
+      <a href={href} className={classes} style={style} {...rest}>
         {typeof icon !== 'string' ? icon : <img src={icon} alt='' className='cat-btn-icon-img' />}
         {children}
       </a>
@@ -49,7 +53,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   }
 
   return (
-    <button className={classes} type={htmlType} {...rest}>
+    <button className={classes} type={htmlType} style={style} {...rest}>
       {typeof icon !== 'string' ? icon : <img src={icon} alt='' className='cat-btn-icon-img' />}
       {children}
     </button>
@@ -60,7 +64,8 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 Button.defaultProps = {
   type: 'default',
   size: 'middle',
-  disabled: false
+  disabled: false,
+  danger: false
 }
 
 export default Button
