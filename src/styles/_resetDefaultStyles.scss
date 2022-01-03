@@ -1,7 +1,16 @@
-/*重置button的默认样式*/
+/*重置 button 的默认样式*/
 button {
   margin: 0;
   padding: 0;
   border: none;
   outline: none;
+}
+
+/*重置 a 的默认样式*/
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
