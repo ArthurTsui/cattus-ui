@@ -9,7 +9,7 @@ const devMode = process.env.NODE_ENV !== 'production'
 const pkg = require('./package.json')
 
 const config = {
-  entry: ['./src/index.ts'],
+  entry: ['./src/index.tsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: devMode ? 'cattus.js' : 'cattus.min.js',
