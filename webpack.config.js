@@ -72,16 +72,6 @@ const config = {
             loader: 'sass-loader' // 使用 sass-loader 将 scss 转为 css
           }
         ]
-      },
-      {
-        test: /(\.(eot|ttf|woff|woff2)|font)$/,
-        loader: 'file-loader',
-        options: { outputPath: 'dist/assets/fonts/' }
-      },
-      {
-        test: /\.(png|jpg|gif|svg|jpeg)$/,
-        loader: 'file-loader',
-        options: { outputPath: 'dist/assets/images/' }
       }
     ]
   },

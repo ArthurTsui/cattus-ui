@@ -94,7 +94,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "file-loader": "^6.2.0",
     "file-save": "^0.2.0",
     "gatsby-plugin-sass": "^5.4.0",
     "husky": "^7.0.4",
