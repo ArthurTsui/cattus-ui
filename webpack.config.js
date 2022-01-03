@@ -9,7 +9,7 @@ const devMode = process.env.NODE_ENV !== 'production'
 const pkg = require('./package.json')
 
 const config = {
-  entry: ['react-hot-loader/patch', './src/index.ts'],
+  entry: ['./src/index.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: devMode ? 'cattus-ui.js' : 'cattus-ui.min.js',
@@ -95,9 +95,7 @@ const config = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
+    alias: {}
   },
   plugins: [
     // 该插件能够使得指定目录被忽略，从而使得打包变快，文件变小;下面忽略了包含’./locale/'该字段路径的文件目录,但是也使得我们使用的时候不能显示中文语言了，所以这个时候可以手动引入中文语言的目录
