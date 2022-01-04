@@ -24,7 +24,8 @@
   "homepage": "",
   "bugs": "https://github.com/ArthurTsui/cattus-ui/issues",
   "files": [
-    "dist/*",
+    "dist",
+    "es",
     "lib",
     "index.js",
     "package.json",
