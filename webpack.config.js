@@ -2,8 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== 'production'
@@ -18,7 +18,7 @@ const config = {
     library: 'cattus-ui',
     libraryTarget: 'umd'
   },
-  devtool: devMode ? 'source-map' : undefined,
+  devtool: !devMode ? 'source-map' : undefined, // 在production模式下，生成 .map 文件
   module: {
     rules: [
       {
@@ -33,17 +33,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              esModule: false
-            }
-          },
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
   },
@@ -75,12 +65,12 @@ const config = {
           // 压缩js代码
           // webpack v5 使用内置的TerserJSPlugin替代UglifyJsPlugin，因为UglifyJsPlugin不支持ES6
           new TerserJSPlugin({
-            // cache: true, // 启用文件缓存并设置缓存目录的路径
             parallel: true // 使用多进程并行运行
-            // sourceMap: true // set to true if you want JS source maps
           }),
           // 用于优化或者压缩CSS资源
-          new CssMinimizerPlugin()
+          new CssMinimizerPlugin({
+            parallel: true
+          })
         ]
   }
 }
