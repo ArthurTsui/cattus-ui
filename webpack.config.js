@@ -18,6 +18,7 @@ const config = {
     library: 'cattus-ui',
     libraryTarget: 'umd'
   },
+  devtool: devMode ? 'source-map' : undefined,
   module: {
     rules: [
       {
@@ -32,7 +33,17 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false
+            }
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -52,10 +63,12 @@ const config = {
     ),
     // 将CSS提取到单独的文件中
     new MiniCssExtractPlugin({
-      filename: devMode ? 'cattus-ui.css' : 'cattus-ui.min.css'
+      filename: devMode ? 'cattus-ui.css' : 'cattus-ui.min.css',
+      chunkFilename: '[id].css'
     })
   ],
   optimization: {
+    minimize: true,
     minimizer: devMode
       ? []
       : [
@@ -67,12 +80,6 @@ const config = {
             // sourceMap: true // set to true if you want JS source maps
           }),
           // 用于优化或者压缩CSS资源
-          // new CssMinimizerPlugin({
-          //   assetNameRegExp: /\.css$/g,
-          //   cssProcessor: require('cssnano'), // 用于优化\最小化 CSS 的 CSS 处理器，默认为 cssnano
-          //   cssProcessorOptions: { safe: true, discardComments: { removeAll: true } }, // 传递给 cssProcesso
-          //   canPrint: true // 布尔值，指示插件是否可以将消息打印到控制台，默认为 true
-          // })
           new CssMinimizerPlugin()
         ]
   }

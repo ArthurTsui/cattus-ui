@@ -42,7 +42,7 @@
   "scripts": {
     "build": "concurrently \"yarn clear\" \"yarn build-dev\" \"yarn build-prod\" \"yarn build-tsc\" \"yarn build-es\" ",
     "build-umd": "concurrently \"yarn clear\" \"yarn build-dev\" \"yarn build-prod\" ",
-    "build-dev": "cross-env NODE_ENV=development webpack",
+    "build-dev": " cross-env NODE_ENV=development webpack",
     "build-prod": "cross-env NODE_ENV=production webpack",
     "build-tsc": "tsc -p tsconfig.build.json --target ES5 --outDir lib",
     "build-es": "concurrently \" cpr src/styles lib/styles -o\" \"cpr src/assets lib/assets -o\" ",
