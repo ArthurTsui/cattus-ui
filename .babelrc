@@ -1,12 +1,14 @@
 {
   "presets": [
     [
-      "@babel/preset-env",
+      "@babel/env",
       {
-        "modules": false
+        "loose": true,
+        "modules": "cjs"
       }
     ],
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/typescript"
   ],
   "plugins": [
     [
@@ -14,6 +16,8 @@
       {
         "useESModules": false
       }
-    ]
+    ],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
   ]
 }

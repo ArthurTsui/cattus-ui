@@ -7,13 +7,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== 'production'
-const pkg = require('./package.json')
+const pkg = require('../package.json')
 
 const config = {
   mode: devMode ? 'development' : 'production',
   entry: ['./src/index.tsx'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: devMode ? 'cattus-ui.js' : 'cattus-ui.min.js',
     library: 'cattus-ui',
     libraryTarget: 'umd'

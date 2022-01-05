@@ -1,1 +1,3 @@
-module.exports = require('./components')
+require('./src/styles')
+
+module.exports = require('./src/components')
