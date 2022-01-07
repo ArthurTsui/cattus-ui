@@ -65,7 +65,8 @@ Button.defaultProps = {
   type: 'default',
   size: 'middle',
   disabled: false,
-  danger: false
+  danger: false,
+  htmlType: 'button'
 }
 
 export default Button

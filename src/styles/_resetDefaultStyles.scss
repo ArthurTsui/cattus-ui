@@ -1,12 +1,19 @@
-/*重置 button 的默认样式*/
+@import "../../node_modules/normalize-scss/sass/normalize";
+@include normalize();
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 button {
   margin: 0;
   padding: 0;
-  border: 1px solid transparent;
+  border: none;
   outline: none;
 }
 
-/*重置 a 的默认样式*/
 a,
 a:link,
 a:visited,

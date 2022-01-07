@@ -1,0 +1,14 @@
+.cat-btn {
+  position: relative;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+
+  width: max-content;
+  height: max-content;
+
+  cursor: pointer;
+}

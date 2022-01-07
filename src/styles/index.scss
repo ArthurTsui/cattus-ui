@@ -1,17 +1,8 @@
-// normalize
-@import "../../node_modules/normalize-scss/sass/normalize";
-@include normalize();
-
-// resetDefaultStyles
 @import "./resetDefaultStyles";
+@import "./_variables/index.scss";
+@import "./_mixins/index.scss";
 
-// variables
-@import "./variables";
+/* components
+   ========================================================================== */
 
-// mixins
-@import "./minxins";
-
-// components
-
-//button
-@import "../components/button/button";
+@import "./button/button";
