@@ -1,3 +1,3 @@
-require('./src/styles/index.scss')
+require('./components/styles/index.scss')
 
-module.exports = require('./src/components')
+module.exports = require('./components')

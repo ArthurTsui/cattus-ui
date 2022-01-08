@@ -8,11 +8,11 @@
     "sourceMap": false // 编译时是否生成.map文件
   },
   "include": [
-    "../../src/**/*.ts",
-    "../../src/**/*.tsx"
+    "../../components/**/*.ts",
+    "../../components/**/*.tsx"
   ],
   "exclude": [
     "node_modules",
-    "../../src/**/__tests__"
+    "../../components/**/__tests__",
   ]
 }

@@ -16,7 +16,7 @@ const paths = {
     lib: '../lib/styles',
     es: '../es/styles',
   },
-  styles: ['../src/styles/**/*.scss'],
+  styles: ['../components/styles/**/*.scss'],
 };
 
 // index.tsx -> index.js(es5 commonjs) -> css.js
