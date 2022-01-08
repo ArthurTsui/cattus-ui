@@ -54,7 +54,7 @@
     "build:gulp": "cd build && gulp",
     "build:dev": "cross-env NODE_ENV=development webpack --config build/webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
-    "create-comp": "node scripts/createComp",
+    "create:comp": "node scripts/createComp",
     "clear": "rimraf dist && rimraf lib && rimraf es",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
