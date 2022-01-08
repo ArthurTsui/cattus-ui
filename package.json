@@ -1,6 +1,6 @@
 {
   "name": "cattus-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Personal React UI library",
   "title": "Cattus UI",
   "main": "lib/index.js",
@@ -46,7 +46,7 @@
     "not IE 10"
   ],
   "scripts": {
-    "build:link": "yarn build && link",
+    "build:link": "yarn build && yarn link",
     "build": "yarn clear && yarn build:umd && yarn build:es && yarn build:cjs && yarn build:gulp",
     "build:umd": "rimraf dist && yarn build:dev && yarn build:prod",
     "build:es": "rimraf es && tsc -p build/tsconfig/tsconfig.es.json --outDir es",
