@@ -46,17 +46,17 @@
     "not IE 10"
   ],
   "scripts": {
-    "build": "concurrently \"yarn clear\" \"yarn build:umd\" \"yarn build:es\" \"yarn build:cjs\" \"yarn gulp\" ",
-    "build:umd": "concurrently \"rimraf dist\" \"yarn build:dev\" \"yarn build:prod\" ",
-    "build:es": "concurrently \"rimraf es\" \"tsc -p build/tsconfig/tsconfig.es.json --outDir es\" ",
-    "build:cjs": "concurrently \"rimraf lib\" \"tsc -p build/tsconfig/tsconfig.cjs.json --outDir lib\" ",
+    "build": "yarn clear && yarn build:umd && yarn build:es && yarn build:cjs && yarn build:gulp",
+    "build:umd": "rimraf dist && yarn build:dev && yarn build:prod",
+    "build:es": "rimraf es && tsc -p build/tsconfig/tsconfig.es.json --outDir es",
+    "build:cjs": "rimraf lib && tsc -p build/tsconfig/tsconfig.cjs.json --outDir lib",
     "build:gulp": "cd build && gulp",
     "build:dev": "cross-env NODE_ENV=development webpack --config build/webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
-    "clear": "concurrently \"rimraf dist\" \"rimraf lib\" \"rimraf es\"",
+    "clear": "rimraf dist && rimraf lib && rimraf es",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "docz:serve": "concurrently \"docz build\" \"docz serve\" ",
+    "docz:serve": "docz build && docz serve",
     "create-comp": "node scripts/createComp",
     "test": "jest",
     "lint": "eslint src --fix --ext .ts,.tsx "
