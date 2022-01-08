@@ -34,8 +34,8 @@
   ],
   "sideEffects": [
     "dist/*",
-    "es/**/style/*",
-    "lib/**/style/*",
+    "es/**/styles/*",
+    "lib/**/styles/*",
     "*.sass"
   ],
   "browserslist": [
