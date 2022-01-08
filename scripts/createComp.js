@@ -3,18 +3,18 @@ const fileSave = require('file-save')
 const uppercamelcase = require('uppercamelcase')
 
 const componentName = process.argv[2]
-const componentUpper = componentName.replace(/^\S/, (s) => s.toUpperCase())
+// const ComponentName = componentName.replace(/^\S/, (s) => s.toUpperCase())
 const ComponentName = uppercamelcase(componentName)
 const componentPath = path.resolve(__dirname, '../src/components', componentName)
 const files = [
   {
     //入口文件
     fileName: 'index.tsx',
-    content: `import ${componentUpper} from './${componentName}'\n\nexport default ${componentUpper}`
+    content: `import ${ComponentName} from './${componentName}'\n\nexport default ${ComponentName}`
   },
   {
     fileName: `${componentName}.tsx`,
-    content: `import React from 'react'\nimport classNames from 'classnames'\n\nexport interface I${componentUpper}Props{}\n\nconst ${componentUpper}: React.FC<I${componentUpper}Props> = (props:I${componentUpper}Props) =>{\n\treturn <></>\n}\n\nexport default ${componentUpper}`
+    content: `import React, { FC } from 'react'\nimport classNames from 'classnames'\n\nexport interface ${ComponentName}Props{}\n\nconst ${ComponentName}: FC<${ComponentName}Props> = (props:${ComponentName}Props) =>{\n\treturn <></>\n}\n\nexport default ${ComponentName}`
   },
   {
     fileName: `__tests__/${componentName}.test.tsx`,
