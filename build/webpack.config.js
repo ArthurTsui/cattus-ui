@@ -11,7 +11,7 @@ const pkg = require('../package.json')
 
 const config = {
   mode: devMode ? 'development' : 'production',
-  entry: ['./src/index.tsx'],
+  entry: ['./index.js'],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: devMode ? 'cattus-ui.js' : 'cattus-ui.min.js',
@@ -37,11 +37,6 @@ const config = {
       }
     ]
   },
-  // devServer: {
-  //   static: {
-  //     directory: './dist'
-  //   }
-  // },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {}

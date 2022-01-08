@@ -1,10 +1,12 @@
 {
   "name": "cattus",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Personal React UI library",
   "title": "Cattus UI",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "unpkg": "dist/cattus-ui.min.js",
   "repository": {
     "url": "https://github.com/ArthurTsui/cattus-ui",
     "type": "git"
@@ -26,26 +28,31 @@
     "dist",
     "es",
     "lib",
-    "index.js",
     "package.json",
     "README.md",
     "LICENSE"
+  ],
+  "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.sass"
   ],
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
     "Firefox ESR",
-    "not dead",
     "IE 11",
     "not IE 10"
   ],
   "scripts": {
-    "build": "concurrently \"yarn clear\" \"yarn build:umd\" \"yarn build:es\" \"yarn build:cjs\" ",
+    "build": "concurrently \"yarn clear\" \"yarn build:umd\" \"yarn build:es\" \"yarn build:cjs\" \"yarn gulp\" ",
     "build:umd": "concurrently \"rimraf dist\" \"yarn build:dev\" \"yarn build:prod\" ",
+    "build:es": "concurrently \"rimraf es\" \"tsc -p build/tsconfig/tsconfig.es.json --outDir es\" ",
+    "build:cjs": "concurrently \"rimraf lib\" \"tsc -p build/tsconfig/tsconfig.cjs.json --outDir lib\" ",
+    "build:gulp": "cd build && gulp",
     "build:dev": "cross-env NODE_ENV=development webpack --config build/webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
-    "build:es": "concurrently \"rimraf lib\" \"tsc -p tsconfig.build.json --target es6 --module esnext --outDir es\" ",
-    "build:cjs": "concurrently \"rimraf es\" \"tsc -p tsconfig.build.json --target es5 --module commonjs --outDir lib\" ",
     "clear": "concurrently \"rimraf dist\" \"rimraf lib\" \"rimraf es\"",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
@@ -66,8 +73,7 @@
     ]
   },
   "dependencies": {
-    "classnames": "^2.3.1",
-    "moment": "^2.29.1"
+    "classnames": "^2.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.7",
@@ -78,6 +84,7 @@
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime": "^7.16.7",
     "@types/classnames": "^2.3.1",
     "@types/enzyme": "^3.10.11",
     "@types/jest": "^27.4.0",
@@ -103,6 +110,11 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "file-save": "^0.2.0",
     "fs": "^0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
     "make-dir-cli": "^3.0.0",
@@ -119,6 +131,7 @@
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.0",
+    "through2": "^4.0.2",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.4",
     "uppercamelcase": "^3.0.0",
