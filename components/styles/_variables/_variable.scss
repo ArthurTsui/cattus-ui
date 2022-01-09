@@ -1,0 +1,23 @@
+/* base */
+$base-width: 1px;
+$base-radius: 2px;
+$base-padding: 10px;
+$base-lg-fontSize: 16px;
+$base-md-fontSize: 14px;
+$base-sm-fontSize: 12px;
+
+/* button */
+$btn-radius: $base-radius;
+$btn-lg-portrait: $base-padding * 1.4;
+$btn-lg-horizontal: $base-padding * 2;
+$btn-md-portrait: $base-padding * 0.8;
+$btn-md-horizontal: $base-padding * 1.2;
+$btn-sm-portrait: $base-padding * 0.2;
+$btn-sm-horizontal: $base-padding * 0.4;
+$btn-lg-fontSize: $base-lg-fontSize;
+$btn-md-fontSize: $base-md-fontSize;
+$btn-sm-fontSize: $base-sm-fontSize;
+$btn-default-color: $black;
+$btn-primary-color: $blue;
+$btn-link-color: $grey-50;
+$btn-danger-color: $red;

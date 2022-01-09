@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode, CSSProperties, FC } from 'react'
 import classNames from 'classnames'
 
-export type ButtonType = 'primary' | 'ghost' | 'dashed' | 'link' | 'text' | 'default'
+export type ButtonType = 'primary' | 'dashed' | 'link' | 'text' | 'default'
 export type ButtonShape = 'default' | 'circle' | 'round'
 export type ButtonSize = 'large' | 'middle' | 'small'
 export type HtmlType = 'submit' | 'reset' | 'button' | undefined
@@ -10,6 +10,7 @@ export type HtmlType = 'submit' | 'reset' | 'button' | undefined
 interface BaseButtonProps {
   type?: ButtonType
   danger?: boolean
+  ghost?: boolean
   shape?: ButtonShape
   size?: ButtonSize
   htmlType?: HtmlType
@@ -25,7 +26,7 @@ type AnchorButtonProps = BaseButtonProps & Omit<AnchorHTMLAttributes<HTMLElement
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps> // button最终的props类型定义
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const { className, type, danger, shape, size, icon, children, href, htmlType, style, ...rest } = props
+  const { className, type, danger, ghost, shape, size, icon, children, href, htmlType, style, ...rest } = props
 
   const sizeClassNameMap = { large: 'lg', middle: 'md', small: 'sm' }
   const sizeCls = size ? sizeClassNameMap[size] : undefined
@@ -35,6 +36,7 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     {
       [`cat-btn-${type}`]: type,
       [`cat-btn-danger`]: danger,
+      [`cat-btn-ghost`]: ghost,
       [`cat-btn-${sizeCls}`]: sizeCls,
       [`cat-btn-${shape}`]: shape,
       [`cat-btn-a`]: href,
@@ -66,6 +68,7 @@ Button.defaultProps = {
   size: 'middle',
   disabled: false,
   danger: false,
+  ghost: false,
   htmlType: 'button'
 }
 

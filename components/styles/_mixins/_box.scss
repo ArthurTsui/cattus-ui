@@ -1,0 +1,31 @@
+@mixin border(
+  $width: $base-width,
+  $style: solid,
+  $color: transparent,
+  $radius: $base-radius,
+  $left: $width,
+  $right: $width,
+  $top: $width,
+  $bottom: $width
+) {
+  border-left: $left $style $color;
+  border-right: $right $style $color;
+  border-top: $top $style $color;
+  border-bottom: $bottom $style $color;
+  border-radius: $radius;
+}
+
+@mixin boxShadow($color, $animationName: box_shadow) {
+  animation: $animationName 0.5s;
+  @include keyframes($animationName) {
+    0% {
+      box-shadow: 0 0 0 0px rgba($color, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 8px rgba($color, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba($color, 0);
+    }
+  }
+}

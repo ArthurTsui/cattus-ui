@@ -1,5 +1,46 @@
+@import "./keyframes";
 @import "./position";
 @import "./flex";
 @import "./size";
-@import "./border";
-@import "./font";
+@import "./box";
+@import "./text";
+
+@mixin disabled($color: $grey-500, $borderColor: $grey-300, $backgroundColor: $grey-100) {
+  color: $color;
+  border-color: $borderColor;
+  background-color: $backgroundColor;
+  box-shadow: none;
+  text-shadow: none;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+@mixin style(
+  $color,
+  $borderColor: $grey-300,
+  $backgroundColor: $white,
+  $border-style: solid,
+  $hover-color: $color,
+  $hover-borderColor: lighten($borderColor, 10%),
+  $hover-backgroundColor: lighten($backgroundColor, 10%)
+) {
+  color: $color;
+  background-color: $backgroundColor;
+
+  @include border($color: $borderColor, $style: $border-style);
+
+  transition-property: color, border-color, background-color;
+  transition-duration: 0.5s;
+
+  &:hover {
+    color: $hover-color;
+    border-color: $hover-borderColor;
+    background: $hover-backgroundColor;
+  }
+
+  &:focus {
+    color: $hover-color;
+    border-color: $hover-borderColor;
+    background: $hover-backgroundColor;
+  }
+}

@@ -1,14 +1,123 @@
 .cat-btn {
   position: relative;
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-
-  width: max-content;
-  height: max-content;
+  @include flex($wrap: nowrap);
+  @include ellipsis;
 
   cursor: pointer;
+
+  &:disabled,
+  &[disabled] {
+    @include disabled;
+  }
+}
+
+/* size */
+.cat-btn-lg {
+  @include size($portrait: $btn-lg-portrait, $horizontal: $btn-lg-horizontal);
+  @include font($btn-lg-fontSize);
+}
+.cat-btn-md {
+  @include size($portrait: $btn-md-portrait, $horizontal: $btn-md-horizontal);
+  @include font($btn-md-fontSize);
+}
+.cat-btn-sm {
+  @include size($portrait: $btn-sm-portrait, $horizontal: $btn-sm-horizontal);
+  @include font($btn-sm-fontSize);
+}
+
+/* type */
+.cat-btn-default {
+  @include style($color: $btn-default-color, $hover-color: $btn-primary-color, $hover-borderColor: $btn-primary-color);
+}
+.cat-btn-primary {
+  @include style($color: $white, $borderColor: $btn-primary-color, $backgroundColor: $btn-primary-color);
+}
+.cat-btn-dashed {
+  @include style(
+    $color: $btn-default-color,
+    $border-style: dashed,
+    $hover-color: $btn-primary-color,
+    $hover-borderColor: $btn-primary-color
+  );
+}
+.cat-btn-text {
+  @include style(
+    $color: $btn-default-color,
+    $borderColor: transparent,
+    $backgroundColor: transparent,
+    $hover-color: $btn-primary-color,
+    $hover-backgroundColor: $btn-link-color
+  );
+}
+.cat-btn-link {
+  @include style($color: $btn-primary-color, $borderColor: transparent, $backgroundColor: transparent);
+}
+
+/* danger */
+.cat-btn-danger.cat-btn-default {
+  @include style($color: $btn-danger-color, $borderColor: $btn-danger-color);
+}
+.cat-btn-danger.cat-btn-dashed {
+  @include style($color: $btn-danger-color, $borderColor: $btn-danger-color, $border-style: dashed);
+}
+.cat-btn-danger.cat-btn-text {
+  @include style(
+    $color: $btn-danger-color,
+    $borderColor: transparent,
+    $backgroundColor: transparent,
+    $hover-backgroundColor: $btn-link-color
+  );
+}
+.cat-btn-danger.cat-btn-link {
+  @include style($color: $btn-danger-color, $borderColor: transparent, $backgroundColor: transparent);
+}
+
+/* ghost */
+.cat-btn-ghost.cat-btn-dashed,
+.cat-btn-ghost.cat-btn-text,
+.cat-btn-ghost.cat-btn-link {
+  filter: invert(100%);
+
+  background-color: transparent;
+}
+.cat-btn-ghost.cat-btn-primary,
+.cat-btn-ghost.cat-btn-danger {
+  background-color: transparent;
+}
+
+/* focus */
+.cat-btn-default,
+.cat-btn-primary,
+.cat-btn-dashed {
+  &:focus {
+    @include boxShadow($btn-primary-color);
+  }
+}
+.cat-btn-danger.cat-btn-default,
+.cat-btn-danger.cat-btn-dashed {
+  &:focus {
+    @include boxShadow($btn-danger-color);
+  }
+}
+
+/* disabled */
+.cat-btn-default,
+.cat-btn-primary,
+.cat-btn-dashed {
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active,
+  &[disabled]:focus {
+    @include disabled;
+  }
+}
+.cat-btn-text,
+.cat-btn-link {
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active,
+  &[disabled]:focus {
+    @include disabled($borderColor: transparent, $backgroundColor: transparent);
+  }
 }
