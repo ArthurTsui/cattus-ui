@@ -1,0 +1,11 @@
+@mixin font($font-size: 1rem, $font-weight: normal, $color: $black) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+@mixin ellipsis($overflow: hidden, $text-overflow: ellipsis, $white-space: nowrap) {
+  overflow: $overflow;
+  text-overflow: $text-overflow;
+  white-space: $white-space;
+}

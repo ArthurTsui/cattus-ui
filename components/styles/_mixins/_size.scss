@@ -1,0 +1,9 @@
+@mixin size($width: auto, $height: $width, $portrait: 0, $horizontal: $portrait) {
+  width: $width;
+  height: $height;
+  padding: $portrait $horizontal;
+}
+
+@mixin square($size, $padding: 0) {
+  @include size($width: $size, $portrait: $padding);
+}
