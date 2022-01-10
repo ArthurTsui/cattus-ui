@@ -5,11 +5,6 @@
   @include ellipsis;
 
   cursor: pointer;
-
-  &:disabled,
-  &[disabled] {
-    @include disabled;
-  }
 }
 
 /* size */
@@ -55,6 +50,9 @@
 }
 
 /* danger */
+.cat-btn-danger.cat-btn-primary {
+  @include style($color: $white, $borderColor: $btn-danger-color, $backgroundColor: $btn-danger-color);
+}
 .cat-btn-danger.cat-btn-default {
   @include style($color: $btn-danger-color, $borderColor: $btn-danger-color);
 }
@@ -74,16 +72,30 @@
 }
 
 /* ghost */
-.cat-btn-ghost.cat-btn-dashed,
-.cat-btn-ghost.cat-btn-text,
-.cat-btn-ghost.cat-btn-link {
-  filter: invert(100%);
-
-  background-color: transparent;
+.cat-btn-ghost.cat-btn-default {
+  @include style(
+    $color: $white,
+    $borderColor: $white,
+    $backgroundColor: transparent,
+    $hover-color: $btn-primary-color,
+    $hover-borderColor: $btn-primary-color
+  );
 }
-.cat-btn-ghost.cat-btn-primary,
+.cat-btn-ghost.cat-btn-dashed {
+  @include style(
+    $color: $white,
+    $borderColor: $white,
+    $backgroundColor: transparent,
+    $border-style: dashed,
+    $hover-color: $btn-primary-color,
+    $hover-borderColor: $btn-primary-color
+  );
+}
+.cat-btn-ghost.cat-btn-primary {
+  @include style($color: $btn-primary-color, $borderColor: $btn-primary-color, $backgroundColor: transparent);
+}
 .cat-btn-ghost.cat-btn-danger {
-  background-color: transparent;
+  @include style($color: $btn-danger-color, $borderColor: $btn-danger-color, $backgroundColor: transparent);
 }
 
 /* focus */
@@ -120,4 +132,15 @@
   &[disabled]:focus {
     @include disabled($borderColor: transparent, $backgroundColor: transparent);
   }
+}
+
+/* shape */
+.cat-btn-shape-default {
+  border-radius: $base-radius;
+}
+.cat-btn-shape-circle {
+  border-radius: 50%;
+}
+.cat-btn-shape-round {
+  border-radius: 20%/50%;
 }

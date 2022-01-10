@@ -35,10 +35,10 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     'cat-btn',
     {
       [`cat-btn-${type}`]: type,
-      [`cat-btn-danger`]: danger,
-      [`cat-btn-ghost`]: ghost,
       [`cat-btn-${sizeCls}`]: sizeCls,
-      [`cat-btn-${shape}`]: shape
+      [`cat-btn-shape-${shape}`]: shape,
+      [`cat-btn-danger`]: danger,
+      [`cat-btn-ghost`]: ghost
     },
     className
   )
@@ -67,7 +67,8 @@ Button.defaultProps = {
   disabled: false,
   danger: false,
   ghost: false,
-  htmlType: 'button'
+  htmlType: 'button',
+  shape: 'default'
 }
 
 export default Button
