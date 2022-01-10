@@ -38,9 +38,7 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
       [`cat-btn-danger`]: danger,
       [`cat-btn-ghost`]: ghost,
       [`cat-btn-${sizeCls}`]: sizeCls,
-      [`cat-btn-${shape}`]: shape,
-      [`cat-btn-a`]: href,
-      [`cat-btn-icon`]: icon
+      [`cat-btn-${shape}`]: shape
     },
     className
   )
