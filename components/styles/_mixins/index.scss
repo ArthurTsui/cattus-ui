@@ -18,9 +18,9 @@
   $color,
   $borderColor,
   $backgroundColor,
-  $hover-color: lighten($color, 10%),
-  $hover-borderColor: lighten($borderColor, 10%),
-  $hover-backgroundColor: lighten($backgroundColor, 10%)
+  $hover-color: lighten($color, 12%),
+  $hover-borderColor: lighten($borderColor, 12%),
+  $hover-backgroundColor: lighten($backgroundColor, 12%)
 ) {
   color: $color;
   @include box($borderColor, $backgroundColor);

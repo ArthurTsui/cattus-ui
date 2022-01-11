@@ -57,7 +57,14 @@
   }
   /* default */
   &.cat-btn-default {
-    @include btn-style($btn-default-color, $btn-default-color, $white, $btn-primary-color, $btn-primary-color);
+    @include btn-style(
+      $btn-default-color,
+      $btn-default-borderColor,
+      $white,
+      $btn-primary-color,
+      $btn-primary-color,
+      $btn-default-backgroundColor
+    );
   }
 }
 
@@ -85,7 +92,13 @@
   }
   /* default */
   &.cat-btn-default {
-    @include btn-style($btn-default-color, $btn-default-color, transparent, $btn-primary-color, $btn-primary-color);
+    @include btn-style(
+      $btn-default-color,
+      $btn-default-borderColor,
+      transparent,
+      $btn-primary-color,
+      $btn-primary-color
+    );
   }
 }
 
@@ -126,14 +139,18 @@
     border-radius: $base-radius;
   }
   &.cat-btn-circle {
-    border-radius: 50%;
+    border-radius: $base-radius-circle;
   }
   &.cat-btn-radian {
-    border-radius: 20%/50%;
+    border-radius: $base-radius-radian;
   }
 
   /* disabled */
+  &.cat-btn-outlined[disabled] {
+    background-color: transparent;
+  }
   &.cat-btn-text[disabled] {
     background-color: transparent;
+    border-color: transparent;
   }
 }

@@ -5,5 +5,5 @@
 }
 
 @mixin square($size, $padding) {
-  @include size($width: $size, $portrait: $padding);
+  @include size($size, $size, $padding, $padding);
 }
