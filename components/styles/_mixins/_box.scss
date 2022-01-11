@@ -1,7 +1,8 @@
-@mixin border(
+@mixin box(
+  $color: $base-border-color,
+  $backgroundColor: $white,
   $width: $base-width,
   $style: solid,
-  $color: transparent,
   $radius: $base-radius,
   $left: $width,
   $right: $width,
@@ -13,11 +14,12 @@
   border-top: $top $style $color;
   border-bottom: $bottom $style $color;
   border-radius: $radius;
+  background-color: $backgroundColor;
 }
 
-@mixin boxShadow($color, $animationName: box_shadow) {
-  animation: $animationName 0.5s;
-  @include keyframes($animationName) {
+@mixin boxShadow($color) {
+  animation: box_shadow 0.5s;
+  @include keyframes(box_shadow) {
     0% {
       box-shadow: 0 0 0 0px rgba($color, 0.4);
     }

@@ -1,11 +1,21 @@
-@mixin font($font-size: $base-md-fontSize, $font-weight: normal, $color: $black) {
+@mixin font($font-size: $base-md-fontSize, $font-weight: normal, $color: $base-text-color) {
   font-size: $font-size;
   font-weight: $font-weight;
   color: $color;
 }
 
-@mixin ellipsis($overflow: hidden, $text-overflow: ellipsis, $white-space: nowrap) {
+@mixin ellipsis(
+  $overflow: hidden,
+  $text-overflow: ellipsis,
+  $white-space: nowrap,
+  $line: 1,
+  $word-break: normal,
+  $orient: vertical
+) {
   overflow: $overflow;
   text-overflow: $text-overflow;
   white-space: $white-space;
+  word-break: $word-break;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: $orient;
 }

@@ -5,31 +5,28 @@
 @import "./box";
 @import "./text";
 
-@mixin disabled($color: $grey-500, $borderColor: $grey-300, $backgroundColor: $grey-100) {
-  color: $color;
-  border-color: $borderColor;
-  background-color: $backgroundColor;
+@mixin disabled() {
+  color: $disabled-color;
+  border-color: $disabled-borderColor;
+  background-color: $disabled-backgroundColor;
   box-shadow: none;
   text-shadow: none;
   cursor: not-allowed;
 }
 
-@mixin style(
+@mixin btn-style(
   $color,
-  $borderColor: $grey-300,
-  $backgroundColor: $white,
-  $border-style: solid,
-  $hover-color: $color,
+  $borderColor,
+  $backgroundColor,
+  $hover-color: lighten($color, 10%),
   $hover-borderColor: lighten($borderColor, 10%),
   $hover-backgroundColor: lighten($backgroundColor, 10%)
 ) {
   color: $color;
-  background-color: $backgroundColor;
-
-  @include border($color: $borderColor, $style: $border-style);
+  @include box($borderColor, $backgroundColor);
 
   transition-property: color, border-color, background-color;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 
   &:hover {
     color: $hover-color;
@@ -41,5 +38,9 @@
     color: $hover-color;
     border-color: $hover-borderColor;
     background: $hover-backgroundColor;
+  }
+
+  &[disabled] {
+    @include disabled;
   }
 }

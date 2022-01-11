@@ -1,23 +1,32 @@
 /* base */
+$ZERO: 0px;
 $base-width: 1px;
-$base-radius: 2px;
+$base-radius: 5px;
 $base-padding: 10px;
-$base-lg-fontSize: 16px;
+$base-lg-fontSize: 15px;
 $base-md-fontSize: 14px;
-$base-sm-fontSize: 12px;
+$base-sm-fontSize: 13px;
+$base-text-color: $black;
+$base-border-color: $grey-300;
+$disabled-color: $grey-400;
+$disabled-borderColor: $grey-500;
+$disabled-backgroundColor: $grey-300;
 
 /* button */
 $btn-radius: $base-radius;
-$btn-lg-portrait: $base-padding * 1.4;
-$btn-lg-horizontal: $base-padding * 2;
-$btn-md-portrait: $base-padding * 0.8;
-$btn-md-horizontal: $base-padding * 1.2;
-$btn-sm-portrait: $base-padding * 0.2;
-$btn-sm-horizontal: $base-padding * 0.4;
+$btn-lg-portrait: $base-padding * 0.7;
+$btn-lg-horizontal: $base-padding * 2.4;
+$btn-md-portrait: $base-padding * 0.5;
+$btn-md-horizontal: $base-padding * 1.5;
+$btn-sm-portrait: $base-padding * 0.3;
+$btn-sm-horizontal: $base-padding * 0.9;
 $btn-lg-fontSize: $base-lg-fontSize;
 $btn-md-fontSize: $base-md-fontSize;
 $btn-sm-fontSize: $base-sm-fontSize;
-$btn-default-color: $black;
-$btn-primary-color: $blue;
-$btn-link-color: $grey-50;
+$btn-primary-color: $purple;
 $btn-danger-color: $red;
+$btn-success-color: $green;
+$btn-warning-color: $amber;
+$btn-info-color: $blue;
+$btn-default-color: $base-text-color;
+$btn-text-backgroundColor: $grey-200;
