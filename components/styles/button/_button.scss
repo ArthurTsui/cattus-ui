@@ -133,7 +133,7 @@
 .cat-btn {
   /* shape */
   &.cat-btn-rect {
-    border-radius: $ZERO;
+    border-radius: $base-radius-rect;
   }
   &.cat-btn-roundRect {
     border-radius: $base-radius;
