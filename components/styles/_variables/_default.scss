@@ -8,23 +8,29 @@ $font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Se
 /**
  * font-size 
  */
-$font-size-large: 15px;
-$font-size-medium: 14px;
-$font-size-small: 13px;
+$font-size: (
+  large: 15px,
+  medium: 14px,
+  small: 13px,
+);
 /**
  * font-weight 
  */
-$font-weight-lighter: lighter;
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-bold: 700;
-$font-weight-bolder: bolder;
+$font-weight: (
+  lighter: lighter,
+  light: 300,
+  normal: 400,
+  bold: 700,
+  bolder: bolder,
+);
 /**
  * line-height 
  */
-$line-height-large: 30px;
-$line-height-medium: 26px;
-$line-height-small: 24px;
+$line-height: (
+  large: 30px,
+  medium: 26px,
+  small: 24px,
+);
 
 /* border
    ========================================================================== */
@@ -35,14 +41,48 @@ $border-width-medium: 1px;
 /**
  * border-radius
  */
-$border-radius-medium: 4px;
-$border-radius-small: 2px;
+$border-radius: (
+  medium: 4px,
+  small: 2px,
+);
 
 /* space
    ========================================================================== */
-$space-large: (3px, 9px, 3px, 9px);
-$space-medium: (5px, 15px, 5px, 15px);
-$space-small: (7px, 21px, 7px, 21px);
+/**
+ * space
+ */
+$space: (
+  xx-lg: 27px,
+  x-lg: 21px,
+  lg: 15px,
+  md: 9px,
+  sm: 7px,
+  x-sm: 5px,
+  xx-sm: 3px,
+);
+/**
+ * spaceGroup
+ */
+$spaceGroup: (
+  large: (
+    7px,
+    21px,
+    7px,
+    21px,
+  ),
+  medium: (
+    5px,
+    15px,
+    5px,
+    15px,
+  ),
+  small: (
+    3px,
+    9px,
+    3px,
+    9px,
+  ),
+);
 
 /* color
    ========================================================================== */

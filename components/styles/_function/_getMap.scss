@@ -1,0 +1,85 @@
+/* font
+   ========================================================================== */
+/**
+ * font-size 
+ */
+@function fontSize($size) {
+  @if map-has-key($font-size, $size) {
+    @return map-get($font-size, $size);
+  }
+
+  @warn "Unknown `#{$key}` size in font-size.";
+  @return null;
+}
+/**
+ * font-weight 
+ */
+@function fontSize($weight) {
+  @if map-has-key($font-weight, $weight) {
+    @return map-get($font-weight, $weight);
+  }
+
+  @warn "Unknown `#{$key}` weight in font-weight.";
+  @return null;
+}
+/**
+ * line-height 
+ */
+@function fontSize($height) {
+  @if map-has-key($font-height, $height) {
+    @return map-get($font-height, $height);
+  }
+
+  @warn "Unknown `#{$key}` height in font-height.";
+  @return null;
+}
+
+/* border
+   ========================================================================== */
+/**
+ * border-radius
+ */
+@function fontSize($size) {
+  @if map-has-key($border-radius, $size) {
+    @return map-get($border-radius, $size);
+  }
+
+  @warn "Unknown `#{$key}` size in border-radius.";
+  @return null;
+}
+
+/* space
+   ========================================================================== */
+/**
+ * space
+ */
+@function space($size) {
+  @if map-has-key($space, $size) {
+    @return map-get($space, $size);
+  }
+
+  @warn "Unknown `#{$key}` size in space.";
+  @return null;
+}
+/**
+ * spaceGroup
+ */
+@function spaceGroup($size) {
+  @if map-has-key($spaceGroup, $size) {
+    @return map-get($spaceGroup, $size);
+  }
+
+  @warn "Unknown `#{$key}` size in spaceGroup.";
+  @return null;
+}
+
+/* color
+   ========================================================================== */
+@function color($type, $key) {
+  @if map-has-key(#{$type}, $key) {
+    @return map-get(#{$type}, $key);
+  }
+
+  @warn "Unknown `#{$key}` in `#{$type}`.";
+  @return null;
+}
