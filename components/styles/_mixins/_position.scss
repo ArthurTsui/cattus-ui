@@ -1,7 +1,0 @@
-@mixin absolute($left: auto, $top: auto, $right: auto, $bottom: auto) {
-  position: absolute;
-  left: $left;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-}
