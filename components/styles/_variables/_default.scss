@@ -1,0 +1,123 @@
+/* font
+   ========================================================================== */
+/**
+ * font-family 
+ */
+$font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, "PingFang SC",
+  "Hiragino Sans GB", "Microsoft Yahei", STHeiti, SimSun, sans-serif !default;
+/**
+ * font-size 
+ */
+$font-size-large: 15px;
+$font-size-medium: 14px;
+$font-size-small: 13px;
+/**
+ * font-weight 
+ */
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+/**
+ * line-height 
+ */
+$line-height-large: 30px;
+$line-height-medium: 26px;
+$line-height-small: 24px;
+
+/* border
+   ========================================================================== */
+/**
+ * border-width
+ */
+$border-width-medium: 1px;
+/**
+ * border-radius
+ */
+$border-radius-medium: 4px;
+$border-radius-small: 2px;
+
+/* space
+   ========================================================================== */
+$space-large: (3px, 9px, 3px, 9px);
+$space-medium: (5px, 15px, 5px, 15px);
+$space-small: (7px, 21px, 7px, 21px);
+
+/* color
+   ========================================================================== */
+/**
+ * primary
+ */
+$primary: (
+  color: $white,
+  fill-color: $purple,
+  background-color: $purple,
+  border-color: $purple,
+  hover-color: $purple-400,
+  active-color: $purple-600,
+);
+/**
+ * danger
+ */
+$danger: (
+  color: $white,
+  fill-color: $red,
+  background-color: $red,
+  border-color: $red,
+  hover-color: $red-400,
+  active-color: $red-600,
+);
+/**
+ * success
+ */
+$success: (
+  color: $white,
+  fill-color: $green,
+  background-color: $green,
+  border-color: $green,
+  hover-color: $green-400,
+  active-color: $green-600,
+);
+/**
+ * warning
+ */
+$warning: (
+  color: $white,
+  fill-color: $orange,
+  background-color: $orange,
+  border-color: $orange,
+  hover-color: $orange-400,
+  active-color: $orange-600,
+);
+/**
+ * info
+ */
+$info: (
+  color: $white,
+  fill-color: $blue,
+  background-color: $blue,
+  border-color: $blue,
+  hover-color: $blue-400,
+  active-color: $blue-600,
+);
+/**
+ * default
+ */
+$default: (
+  color: $black,
+  background-color: $white,
+  border-color: $grey-300,
+  hover-color: $blue-500,
+  hover-backgroundColor: $blue-100,
+  hover-borderColor: $blue-500,
+  active-color: $grey-200,
+);
+/**
+ * disabled
+ */
+$default: (
+  color: $grey-400,
+  background-color: $grey-200,
+  border-color: $grey-400,
+);
