@@ -87,76 +87,119 @@ $spaceGroup: (
 /* color
    ========================================================================== */
 /**
- * primary
+ * baseColor 
  */
-$primary: (
-  color: $white,
-  fill-color: $purple,
-  background-color: $purple,
-  border-color: $purple,
-  hover-color: $purple-400,
-  active-color: $purple-600,
+$baseColor: (
+  primary: $blue,
+  danger: $red,
+  success: $green,
+  warning: $orange,
+  secondary: $purple,
+  default: $black,
 );
 /**
- * danger
+ * fontColor 
  */
-$danger: (
-  color: $white,
-  fill-color: $red,
-  background-color: $red,
-  border-color: $red,
-  hover-color: $red-400,
-  active-color: $red-600,
+$fontColor: (
+  primary: $white,
+  danger: $white,
+  success: $white,
+  warning: $white,
+  secondary: $white,
+  default: $black,
 );
 /**
- * success
+ * backgroundColor 
  */
-$success: (
-  color: $white,
-  fill-color: $green,
-  background-color: $green,
-  border-color: $green,
-  hover-color: $green-400,
-  active-color: $green-600,
+$backgroundColor: (
+  primary: $blue,
+  danger: $red,
+  success: $green,
+  warning: $orange,
+  secondary: $purple,
+  default: $white,
 );
 /**
- * warning
+ * borderColor 
  */
-$warning: (
-  color: $white,
-  fill-color: $orange,
-  background-color: $orange,
-  border-color: $orange,
-  hover-color: $orange-400,
-  active-color: $orange-600,
+$borderColor: (
+  primary: $blue,
+  danger: $red,
+  success: $green,
+  warning: $orange,
+  secondary: $purple,
+  default: $grey-300,
 );
 /**
- * info
+ * hover-fontColor 
  */
-$info: (
-  color: $white,
-  fill-color: $blue,
-  background-color: $blue,
-  border-color: $blue,
-  hover-color: $blue-400,
-  active-color: $blue-600,
+$hover-fontColor: (
+  primary: $grey-100,
+  danger: $grey-100,
+  success: $grey-100,
+  warning: $grey-100,
+  secondary: $grey-100,
+  default: $blue-500,
 );
 /**
- * default
+ * hover-backgroundColor 
  */
-$default: (
-  color: $black,
-  background-color: $white,
-  border-color: $grey-300,
-  hover-color: $blue-500,
-  hover-backgroundColor: $blue-100,
-  hover-borderColor: $blue-500,
-  active-color: $grey-200,
+$hover-backgroundColor: (
+  primary: $blue-400,
+  danger: $red-400,
+  success: $green-400,
+  warning: $orange-400,
+  secondary: $purple-400,
+  default: $blue-100,
+);
+/**
+ * hover-borderColor 
+ */
+$hover-borderColor: (
+  primary: $blue-400,
+  danger: $red-400,
+  success: $green-400,
+  warning: $orange-400,
+  secondary: $purple-400,
+  default: $blue-500,
+);
+/**
+ * active-fontColor 
+ */
+$active-fontColor: (
+  primary: $grey-100,
+  danger: $grey-100,
+  success: $grey-100,
+  warning: $grey-100,
+  secondary: $grey-100,
+  default: $blue-500,
+);
+/**
+ * active-backgroundColor 
+ */
+$active-backgroundColor: (
+  primary: $blue-600,
+  danger: $red-600,
+  success: $green-600,
+  warning: $orange-600,
+  secondary: $purple-600,
+  default: $grey-200,
+);
+/**
+ * active-borderColor 
+ */
+$active-borderColor: (
+  primary: $blue-600,
+  danger: $red-600,
+  success: $green-600,
+  warning: $orange-600,
+  secondary: $purple-600,
+  default: $grey-200,
 );
 /**
  * disabled
  */
-$default: (
+$disabled: (
   color: $grey-400,
   background-color: $grey-200,
   border-color: $grey-400,

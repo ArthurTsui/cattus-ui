@@ -75,11 +75,124 @@
 
 /* color
    ========================================================================== */
-@function color($type, $key) {
-  @if map-has-key(#{$type}, $key) {
-    @return map-get(#{$type}, $key);
+/**
+ * baseColor
+ */
+@function baseColor($key) {
+  @if map-has-key($baseColor, $key) {
+    @return map-get($baseColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in `#{$type}`.";
+  @warn "Unknown `#{$key}` in baseColor.";
+  @return null;
+}
+/**
+ * fontColor
+ */
+@function fontColor($key) {
+  @if map-has-key($fontColor, $key) {
+    @return map-get($fontColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in fontColor.";
+  @return null;
+}
+/**
+ * backgroundColor
+ */
+@function backgroundColor($key) {
+  @if map-has-key($backgroundColor, $key) {
+    @return map-get($backgroundColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in backgroundColor.";
+  @return null;
+}
+/**
+ * borderColor
+ */
+@function borderColor($key) {
+  @if map-has-key($borderColor, $key) {
+    @return map-get($borderColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in borderColor.";
+  @return null;
+}
+/**
+ * hover-fontColor
+ */
+@function hover-fontColor($key) {
+  @if map-has-key($hover-fontColor, $key) {
+    @return map-get($hover-fontColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in hover-fontColor.";
+  @return null;
+}
+/**
+ * hover-backgroundColor
+ */
+@function hover-backgroundColor($key) {
+  @if map-has-key($hover-backgroundColor, $key) {
+    @return map-get($hover-backgroundColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in hover-backgroundColor.";
+  @return null;
+}
+/**
+ * hover-borderColor
+ */
+@function hover-borderColor($key) {
+  @if map-has-key($hover-borderColor, $key) {
+    @return map-get($hover-borderColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in hover-borderColor.";
+  @return null;
+}
+/**
+ * active-fontColor
+ */
+@function active-fontColor($key) {
+  @if map-has-key($active-fontColor, $key) {
+    @return map-get($active-fontColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in active-fontColor.";
+  @return null;
+}
+/**
+ * active-backgroundColor
+ */
+@function active-backgroundColor($key) {
+  @if map-has-key($active-backgroundColor, $key) {
+    @return map-get($active-backgroundColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in active-backgroundColor.";
+  @return null;
+}
+/**
+ * active-borderColor
+ */
+@function hactivever-borderColor($key) {
+  @if map-has-key($active-borderColor, $key) {
+    @return map-get($active-borderColor, $key);
+  }
+
+  @warn "Unknown `#{$key}` in active-borderColor.";
+  @return null;
+}
+/**
+ * disabled
+ */
+@function disabled($key) {
+  @if map-has-key($disabled, $key) {
+    @return map-get($disabled, $key);
+  }
+
+  @warn "Unknown `#{$key}` in disabled.";
   @return null;
 }
