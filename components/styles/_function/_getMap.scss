@@ -83,7 +83,7 @@
     @return map-get($baseColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in baseColor.";
+  @warn "Unknown `#{$key}` color in baseColor.";
   @return null;
 }
 /**
@@ -94,7 +94,7 @@
     @return map-get($fontColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in fontColor.";
+  @warn "Unknown `#{$key}` color in fontColor.";
   @return null;
 }
 /**
@@ -105,7 +105,7 @@
     @return map-get($backgroundColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in backgroundColor.";
+  @warn "Unknown `#{$key}` color in backgroundColor.";
   @return null;
 }
 /**
@@ -116,7 +116,7 @@
     @return map-get($borderColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in borderColor.";
+  @warn "Unknown `#{$key}` color in borderColor.";
   @return null;
 }
 /**
@@ -127,7 +127,7 @@
     @return map-get($hover-fontColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in hover-fontColor.";
+  @warn "Unknown `#{$key}` color in hover-fontColor.";
   @return null;
 }
 /**
@@ -138,7 +138,7 @@
     @return map-get($hover-backgroundColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in hover-backgroundColor.";
+  @warn "Unknown `#{$key}` color in hover-backgroundColor.";
   @return null;
 }
 /**
@@ -149,7 +149,7 @@
     @return map-get($hover-borderColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in hover-borderColor.";
+  @warn "Unknown `#{$key}` color in hover-borderColor.";
   @return null;
 }
 /**
@@ -160,7 +160,7 @@
     @return map-get($active-fontColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in active-fontColor.";
+  @warn "Unknown `#{$key}` color in active-fontColor.";
   @return null;
 }
 /**
@@ -171,7 +171,7 @@
     @return map-get($active-backgroundColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in active-backgroundColor.";
+  @warn "Unknown `#{$key}` color in active-backgroundColor.";
   @return null;
 }
 /**
@@ -182,7 +182,7 @@
     @return map-get($active-borderColor, $key);
   }
 
-  @warn "Unknown `#{$key}` in active-borderColor.";
+  @warn "Unknown `#{$key}` color in active-borderColor.";
   @return null;
 }
 /**
@@ -193,6 +193,6 @@
     @return map-get($disabled, $key);
   }
 
-  @warn "Unknown `#{$key}` in disabled.";
+  @warn "Unknown `#{$key}` color in disabled.";
   @return null;
 }
