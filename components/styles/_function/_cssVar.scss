@@ -1,0 +1,21 @@
+/**
+ * css-prefix
+ */
+@function get-css-prefix() {
+  @return "--theme";
+}
+
+/**
+ * color-var-name
+ */
+@function get-color-var-name($attr, $colorType) {
+  @return #{$attr}-#{$colorType};
+}
+
+/**
+ * color-attr-var
+ */
+@function get-color-attr-var($attr, $colorType) {
+  $prefix: get-css-prefix();
+  @return #{$prefix}-#{get-color-var-name($attr, $colorType)};
+}

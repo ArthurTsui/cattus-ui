@@ -1,7 +1,18 @@
 /* font
    ========================================================================== */
 /**
- * font-size 
+ * get fontStyle From Map
+ */
+@function getFontStyle($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @warn "Unknown `#{$key}` in `#{$map}`.";
+  @return null;
+}
+/**
+ * font-size
  */
 @function fontSize($size) {
   @if map-has-key($font-size, $size) {
@@ -12,7 +23,7 @@
   @return null;
 }
 /**
- * font-weight 
+ * font-weight
  */
 @function fontSize($weight) {
   @if map-has-key($font-weight, $weight) {
@@ -23,7 +34,7 @@
   @return null;
 }
 /**
- * line-height 
+ * line-height
  */
 @function fontSize($height) {
   @if map-has-key($font-height, $height) {
@@ -37,9 +48,20 @@
 /* border
    ========================================================================== */
 /**
+ * get radius From Map
+ */
+@function getRadius($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @warn "Unknown `#{$key}` in `#{$map}`.";
+  @return null;
+}
+/**
  * border-radius
  */
-@function fontSize($size) {
+@function borderRadius($size) {
   @if map-has-key($border-radius, $size) {
     @return map-get($border-radius, $size);
   }
@@ -50,6 +72,17 @@
 
 /* space
    ========================================================================== */
+/**
+ * get space From Map
+ */
+@function getSpace($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @warn "Unknown `#{$key}` in `#{$map}`.";
+  @return null;
+}
 /**
  * space
  */
@@ -75,6 +108,17 @@
 
 /* color
    ========================================================================== */
+/**
+ * get Color From Map
+ */
+@function getColor($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @warn "Unknown `#{$key}` in `#{$map}`.";
+  @return null;
+}
 /**
  * baseColor
  */
