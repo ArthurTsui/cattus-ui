@@ -37,13 +37,17 @@ $line-height: (
 /**
  * border-width
  */
-$border-width-medium: 1px;
+$border-width: (
+  medium: 1px,
+);
 /**
  * border-radius
  */
 $border-radius: (
-  medium: 4px,
-  small: 2px,
+  circle: 50%,
+  radian: 20%/50%,
+  roundRect: 4px,
+  rect: 2px,
 );
 
 /* space

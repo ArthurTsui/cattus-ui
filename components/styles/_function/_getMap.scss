@@ -37,6 +37,17 @@
 /* border
    ========================================================================== */
 /**
+ * border-width
+ */
+@function borderWidth($size) {
+  @if map-has-key($border-width, $size) {
+    @return map-get($border-width, $size);
+  }
+
+  @warn "Unknown `#{$key}` size in border-width.";
+  @return null;
+}
+/**
  * border-radius
  */
 @function borderRadius($size) {
