@@ -46,22 +46,38 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     className
   )
 
-  if (href) {
+  if (startIcon || endIcon) {
     return (
-      <a href={href} className={classes} style={style} {...rest}>
-        {typeof startIcon !== 'string' ? startIcon : <img src={startIcon} alt='' className='cat-btn-icon-img' />}
-        {children}
-        {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
-      </a>
+      <>
+        {href ? (
+          <a href={href} className={classes} style={style} {...rest}>
+            {typeof startIcon !== 'string' ? startIcon : <img src={startIcon} alt='' className='cat-btn-icon-img' />}
+            <span>{children}</span>
+            {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
+          </a>
+        ) : (
+          <button className={classes} type={htmlType} style={style} {...rest}>
+            {typeof startIcon === 'string' ? <img src={startIcon} alt='' className='cat-btn-icon-img' /> : startIcon}
+            <span>{children}</span>
+            {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
+          </button>
+        )}
+      </>
     )
   }
 
   return (
-    <button className={classes} type={htmlType} style={style} {...rest}>
-      {typeof startIcon === 'string' ? <img src={startIcon} alt='' className='cat-btn-icon-img' /> : startIcon}
-      {children}
-      {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
-    </button>
+    <>
+      {href ? (
+        <a href={href} className={classes} style={style} {...rest}>
+          {children}
+        </a>
+      ) : (
+        <button className={classes} type={htmlType} style={style} {...rest}>
+          {children}
+        </button>
+      )}
+    </>
   )
 }
 

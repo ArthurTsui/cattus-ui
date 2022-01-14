@@ -9,14 +9,26 @@
   &-lg {
     @include box(large);
     @include font(large);
+
+    .cat-btn-icon-img {
+      height: fontSize(large);
+    }
   }
   &-md {
     @include box(medium);
     @include font(medium);
+
+    .cat-btn-icon-img {
+      height: fontSize(large);
+    }
   }
   &-sm {
     @include box(small);
     @include font(small);
+
+    .cat-btn-icon-img {
+      height: fontSize(large);
+    }
   }
 
   /**

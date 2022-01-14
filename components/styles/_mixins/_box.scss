@@ -8,7 +8,7 @@
   border-color: transparent;
 }
 
-@mixin display($type, $direction: row, $justify: center, $align: center, $wrap: nowrap) {
+@mixin display($type, $justify: center, $align: center, $wrap: nowrap, $direction: row) {
   display: $type;
 
   @if ($type == flex) {
