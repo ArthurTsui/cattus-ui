@@ -113,6 +113,7 @@
   }
 
   @if ($type == circle) {
+    padding: 0;
     border-radius: borderRadius(circle);
   }
 
