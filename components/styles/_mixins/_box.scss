@@ -12,5 +12,5 @@
 @mixin square($size) {
   min-width: minWidth($size);
   min-height: minHeight($size);
-  padding: space($size);
+  padding: space($size) 0;
 }
