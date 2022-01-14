@@ -11,7 +11,7 @@
 @mixin display($type, $direction: row, $justify: center, $align: center, $wrap: nowrap) {
   display: $type;
 
-  @if (display == flex) {
+  @if ($type == flex) {
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
@@ -20,7 +20,7 @@
     line-height: 1;
   }
 
-  @if (display == inline-flex) {
+  @if ($type == inline-flex) {
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;

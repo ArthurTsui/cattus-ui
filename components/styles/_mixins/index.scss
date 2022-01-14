@@ -21,20 +21,18 @@
   }
 }
 
-@mixin fillColor($colorType, $hover: true, $action: true) {
-  $baseColor: color-var($baseColor, "color", $colorType);
-
-  color: $baseColor;
+@mixin baseColor($colorType, $hover: true, $action: true) {
+  color: color-var($baseColor, "color", $colorType);
 
   @if $hover {
     &:hover {
-      color: color-var($hover-baseColor, "hover-color", $colorType);
+      color: color-var($hover-baseColor, "color", $colorType);
     }
   }
 
   @if $action {
     &:active {
-      color: color-var($active-baseColor, "active-color", $colorType);
+      color: color-var($active-baseColor, "color", $colorType);
     }
   }
 }

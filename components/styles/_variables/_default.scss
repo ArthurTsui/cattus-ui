@@ -94,7 +94,7 @@ $spaceGroup: (
   small: 3px 9px,
 );
 
-/* color
+/* baseColor
    ========================================================================== */
 /**
  * baseColor 
@@ -108,6 +108,31 @@ $baseColor: (
   default: $black,
 );
 /**
+ * hover-baseColor 
+ */
+$hover-baseColor: (
+  primary: $blue-400,
+  danger: $red-400,
+  success: $green-400,
+  warning: $orange-400,
+  secondary: $purple-400,
+  default: $black,
+);
+/**
+ * active-baseColor 
+ */
+$active-baseColor: (
+  primary: $blue-700,
+  danger: $red-700,
+  success: $green-700,
+  warning: $orange-700,
+  secondary: $purple-700,
+  default: $black,
+);
+
+/* fontColor
+   ========================================================================== */
+/**
  * fontColor 
  */
 $fontColor: (
@@ -119,6 +144,31 @@ $fontColor: (
   default: $black,
 );
 /**
+ * hover-fontColor 
+ */
+$hover-fontColor: (
+  primary: $grey-100,
+  danger: $grey-100,
+  success: $grey-100,
+  warning: $grey-100,
+  secondary: $grey-100,
+  default: $black,
+);
+/**
+ * active-fontColor 
+ */
+$active-fontColor: (
+  primary: $grey-100,
+  danger: $grey-100,
+  success: $grey-100,
+  warning: $grey-100,
+  secondary: $grey-100,
+  default: $black,
+);
+
+/* backgroundColor
+   ========================================================================== */
+/**
  * backgroundColor 
  */
 $backgroundColor: (
@@ -128,28 +178,6 @@ $backgroundColor: (
   warning: $orange,
   secondary: $purple,
   default: $white,
-);
-/**
- * borderColor 
- */
-$borderColor: (
-  primary: $blue,
-  danger: $red,
-  success: $green,
-  warning: $orange,
-  secondary: $purple,
-  default: $grey-300,
-);
-/**
- * hover-fontColor 
- */
-$hover-fontColor: (
-  primary: $grey-100,
-  danger: $grey-100,
-  success: $grey-100,
-  warning: $grey-100,
-  secondary: $grey-100,
-  default: $blue,
 );
 /**
  * hover-backgroundColor 
@@ -163,6 +191,31 @@ $hover-backgroundColor: (
   default: $blue-50,
 );
 /**
+ * active-backgroundColor 
+ */
+$active-backgroundColor: (
+  primary: $blue-700,
+  danger: $red-700,
+  success: $green-700,
+  warning: $orange-700,
+  secondary: $purple-700,
+  default: $blue-100,
+);
+
+/* borderColor
+   ========================================================================== */
+/**
+ * borderColor 
+ */
+$borderColor: (
+  primary: $blue,
+  danger: $red,
+  success: $green,
+  warning: $orange,
+  secondary: $purple,
+  default: $grey-300,
+);
+/**
  * hover-borderColor 
  */
 $hover-borderColor: (
@@ -171,40 +224,18 @@ $hover-borderColor: (
   success: $green-400,
   warning: $orange-400,
   secondary: $purple-400,
-  default: $blue,
-);
-/**
- * active-fontColor 
- */
-$active-fontColor: (
-  primary: $grey-100,
-  danger: $grey-100,
-  success: $grey-100,
-  warning: $grey-100,
-  secondary: $grey-100,
-  default: $blue-600,
-);
-/**
- * active-backgroundColor 
- */
-$active-backgroundColor: (
-  primary: $blue-600,
-  danger: $red-600,
-  success: $green-600,
-  warning: $orange-600,
-  secondary: $purple-600,
-  default: $grey-200,
+  default: $blue-400,
 );
 /**
  * active-borderColor 
  */
 $active-borderColor: (
-  primary: $blue-600,
-  danger: $red-600,
-  success: $green-600,
-  warning: $orange-600,
-  secondary: $purple-600,
-  default: $grey-200,
+  primary: $blue-700,
+  danger: $red-700,
+  success: $green-700,
+  warning: $orange-700,
+  secondary: $purple-700,
+  default: $blue-700,
 );
 
 /* disabled

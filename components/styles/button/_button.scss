@@ -60,27 +60,27 @@
   &-outlined,
   &-text {
     &Primary {
-      @include fillColor(primary);
+      @include baseColor(primary);
     }
 
     &Danger {
-      @include fillColor(danger);
+      @include baseColor(danger);
     }
 
     &Success {
-      @include fillColor(success);
+      @include baseColor(success);
     }
 
     &Warning {
-      @include fillColor(warning);
+      @include baseColor(warning);
     }
 
     &Secondary {
-      @include fillColor(secondary);
+      @include baseColor(secondary);
     }
 
     &Default {
-      @include fillColor(default);
+      @include baseColor(default);
     }
   }
 
