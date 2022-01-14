@@ -1,0 +1,7 @@
+@mixin font($size, $weight, $align: center) {
+  font-family: inherit;
+  font-size: fontSize($size);
+  font-weight: fontWeight($weight);
+  line-height: lineHeight($size);
+  text-align: $align;
+}

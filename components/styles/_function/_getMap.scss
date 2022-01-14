@@ -4,33 +4,58 @@
  * font-size
  */
 @function fontSize($size) {
-  @if map-has-key($font-size, $size) {
-    @return map-get($font-size, $size);
+  @if map-has-key($fontSize, $size) {
+    @return map-get($fontSize, $size);
   }
 
-  @warn "Unknown `#{$key}` size in font-size.";
+  @warn "Unknown `#{$key}` size in fontSize.";
   @return null;
 }
 /**
  * font-weight
  */
 @function fontWeight($weight) {
-  @if map-has-key($font-weight, $weight) {
-    @return map-get($font-weight, $weight);
+  @if map-has-key($fontWeight, $weight) {
+    @return map-get($fontWeight, $weight);
   }
 
-  @warn "Unknown `#{$key}` weight in font-weight.";
+  @warn "Unknown `#{$key}` weight in fontWeight.";
   @return null;
 }
 /**
  * line-height
  */
 @function lineHeight($height) {
-  @if map-has-key($font-height, $height) {
-    @return map-get($font-height, $height);
+  @if map-has-key($fontHeight, $height) {
+    @return map-get($fontHeight, $height);
   }
 
-  @warn "Unknown `#{$key}` height in font-height.";
+  @warn "Unknown `#{$key}` height in fontHeight.";
+  @return null;
+}
+
+/* width | height
+   ========================================================================== */
+/**
+ * min-width
+ */
+@function minWidth($size) {
+  @if map-has-key($minWidth, $size) {
+    @return map-get($minWidth, $size);
+  }
+
+  @warn "Unknown `#{$key}` size in minWidth.";
+  @return null;
+}
+/**
+ * min-height
+ */
+@function minHeight($size) {
+  @if map-has-key($minHeight, $size) {
+    @return map-get($minHeight, $size);
+  }
+
+  @warn "Unknown `#{$key}` size in minHeight.";
   @return null;
 }
 
@@ -40,22 +65,22 @@
  * border-width
  */
 @function borderWidth($size) {
-  @if map-has-key($border-width, $size) {
-    @return map-get($border-width, $size);
+  @if map-has-key($borderWidth, $size) {
+    @return map-get($borderWidth, $size);
   }
 
-  @warn "Unknown `#{$key}` size in border-width.";
+  @warn "Unknown `#{$key}` size in borderWidth.";
   @return null;
 }
 /**
  * border-radius
  */
 @function borderRadius($size) {
-  @if map-has-key($border-radius, $size) {
-    @return map-get($border-radius, $size);
+  @if map-has-key($borderRadius, $size) {
+    @return map-get($borderRadius, $size);
   }
 
-  @warn "Unknown `#{$key}` size in border-radius.";
+  @warn "Unknown `#{$key}` size in borderRadius.";
   @return null;
 }
 

@@ -1,0 +1,16 @@
+@mixin box($size) {
+  min-width: minWidth($size);
+  min-height: minHeight($size);
+  padding: spaceGroup($size);
+}
+
+@mixin border($size) {
+  border-width: borderWidth(medium);
+  border-radius: borderRadius($size);
+}
+
+@mixin square($size) {
+  min-width: minWidth($size);
+  min-height: minHeight($size);
+  padding: space($size);
+}

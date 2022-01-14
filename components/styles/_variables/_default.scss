@@ -3,12 +3,12 @@
 /**
  * font-family 
  */
-$font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, "PingFang SC",
+$fontFamily: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, "PingFang SC",
   "Hiragino Sans GB", "Microsoft Yahei", STHeiti, SimSun, sans-serif !default;
 /**
  * font-size 
  */
-$font-size: (
+$fontSize: (
   large: 15px,
   medium: 14px,
   small: 13px,
@@ -16,7 +16,7 @@ $font-size: (
 /**
  * font-weight 
  */
-$font-weight: (
+$fontWeight: (
   lighter: lighter,
   light: 300,
   normal: 400,
@@ -26,9 +26,28 @@ $font-weight: (
 /**
  * line-height 
  */
-$line-height: (
+$lineHeight: (
   large: 30px,
   medium: 26px,
+  small: 24px,
+);
+
+/* width | height
+   ========================================================================== */
+/**
+ * min-width
+ */
+$minWidth: (
+  large: 40px,
+  medium: 32px,
+  small: 24px,
+);
+/**
+ * min-height
+ */
+$minHeight: (
+  large: 40px,
+  medium: 32px,
   small: 24px,
 );
 
@@ -37,17 +56,16 @@ $line-height: (
 /**
  * border-width
  */
-$border-width: (
+$borderWidth: (
   medium: 1px,
 );
 /**
  * border-radius
  */
-$border-radius: (
-  circle: 50%,
-  radian: 20%/50%,
-  roundRect: 4px,
-  rect: 2px,
+$borderRadius: (
+  large: 50%,
+  medium: 4px,
+  small: 2px,
 );
 
 /* space
