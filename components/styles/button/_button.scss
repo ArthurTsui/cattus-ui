@@ -1,0 +1,102 @@
+.cat-btn {
+  @include display(inline-flex);
+
+  cursor: pointer;
+
+  /**
+   * size
+   */
+  &-lg {
+    @include box(large);
+    @include font(large);
+  }
+  &-md {
+    @include box(medium);
+    @include font(medium);
+  }
+  &-sm {
+    @include box(small);
+    @include font(small);
+  }
+
+  /**
+   * type
+   */
+  &-primary {
+    @include colorArrt(primary);
+  }
+  &-danger {
+    @include colorArrt(danger);
+  }
+  &-success {
+    @include colorArrt(success);
+  }
+  &-warning {
+    @include colorArrt(warning);
+  }
+  &-secondary {
+    @include colorArrt(secondary);
+  }
+  &-default {
+    @include colorArrt(default);
+  }
+
+  /**
+   * facade
+   */
+  &-contained {
+    @include facade(contained);
+  }
+  &-outlined {
+    @include facade(outlined);
+  }
+  &-text {
+    @include facade(text);
+  }
+
+  /**
+   * facade & type
+   */
+  &-outlined,
+  &-text {
+    &Primary {
+      @include fillColor(primary);
+    }
+
+    &Danger {
+      @include fillColor(danger);
+    }
+
+    &Success {
+      @include fillColor(success);
+    }
+
+    &Warning {
+      @include fillColor(warning);
+    }
+
+    &Secondary {
+      @include fillColor(secondary);
+    }
+
+    &Default {
+      @include fillColor(default);
+    }
+  }
+
+  /**
+   * shape
+   */
+  &-rect {
+    @include shape(rect);
+  }
+  &-roundRect {
+    @include shape(roundRect);
+  }
+  &-round {
+    @include shape(round);
+  }
+  &-circle {
+    @include shape(circle);
+  }
+}

@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode, CSSProperties, FC } from 'react'
 
-export type ButtonType = 'primary' | 'danger' | 'success' | 'warning' | 'info' | 'default'
+export type ButtonType = 'primary' | 'danger' | 'success' | 'warning' | 'secondary' | 'default'
 export type ButtonFacade = 'contained' | 'outlined' | 'text'
 export type ButtonSize = 'large' | 'middle' | 'small'
-export type ButtonShape = 'rect' | 'roundRect' | 'circle' | 'radian'
+export type ButtonShape = 'rect' | 'roundRect' | 'circle' | 'round'
 export type HtmlType = 'submit' | 'reset' | 'button' | undefined
 
 //基础props类型定义
@@ -32,13 +32,16 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const sizeClassNameMap = { large: 'lg', middle: 'md', small: 'sm' }
   const sizeCls = size ? sizeClassNameMap[size] : undefined
 
+  const facadeTypeCls = facade && type ? facade + type.replace(/^\S/, (s) => s.toUpperCase()) : undefined
+
   const classes = classNames(
     'cat-btn',
     {
       [`cat-btn-${type}`]: type,
       [`cat-btn-${facade}`]: facade,
       [`cat-btn-${sizeCls}`]: sizeCls,
-      [`cat-btn-${shape}`]: shape
+      [`cat-btn-${shape}`]: shape,
+      [`cat-btn-${facadeTypeCls}`]: facadeTypeCls
     },
     className
   )

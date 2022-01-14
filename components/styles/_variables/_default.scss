@@ -63,9 +63,12 @@ $borderWidth: (
  * border-radius
  */
 $borderRadius: (
-  large: 50%,
-  medium: 4px,
-  small: 2px,
+  circle: 50%,
+  round: (
+    30%/50%,
+  ),
+  roundRect: 4px,
+  rect: 2px,
 );
 
 /* space
@@ -86,24 +89,9 @@ $space: (
  * spaceGroup
  */
 $spaceGroup: (
-  large: (
-    7px,
-    21px,
-    7px,
-    21px,
-  ),
-  medium: (
-    5px,
-    15px,
-    5px,
-    15px,
-  ),
-  small: (
-    3px,
-    9px,
-    3px,
-    9px,
-  ),
+  large: 7px 21px,
+  medium: 5px 15px,
+  small: 3px 9px,
 );
 
 /* color
@@ -161,7 +149,7 @@ $hover-fontColor: (
   success: $grey-100,
   warning: $grey-100,
   secondary: $grey-100,
-  default: $blue-500,
+  default: $blue,
 );
 /**
  * hover-backgroundColor 
@@ -172,7 +160,7 @@ $hover-backgroundColor: (
   success: $green-400,
   warning: $orange-400,
   secondary: $purple-400,
-  default: $blue-100,
+  default: $blue-50,
 );
 /**
  * hover-borderColor 
@@ -183,7 +171,7 @@ $hover-borderColor: (
   success: $green-400,
   warning: $orange-400,
   secondary: $purple-400,
-  default: $blue-500,
+  default: $blue,
 );
 /**
  * active-fontColor 
@@ -194,7 +182,7 @@ $active-fontColor: (
   success: $grey-100,
   warning: $grey-100,
   secondary: $grey-100,
-  default: $blue-500,
+  default: $blue-600,
 );
 /**
  * active-backgroundColor 

@@ -7,3 +7,10 @@
 
   @return var($varNme, $color);
 }
+
+@function color-var-base($map, $attr, $colorType) {
+  $varNme: get-color-attr-var($attr, $colorType);
+  $color: getColor($map, $colorType);
+
+  @return var($varNme, $color);
+}

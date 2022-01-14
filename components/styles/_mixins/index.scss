@@ -1,2 +1,124 @@
 @import "./box";
 @import "./font";
+
+@mixin disabled($backgroundColor: true, $borderColor: true) {
+  &[disabled] {
+    color: disabled(color);
+
+    @if $backgroundColor {
+      background-color: disabled(background-color);
+    } @else {
+      background-color: transparent;
+    }
+
+    @if $borderColor {
+      border-color: disabled(border-color);
+    } @else {
+      border-color: transparent;
+    }
+
+    cursor: not-allowed;
+  }
+}
+
+@mixin fillColor($colorType, $hover: true, $action: true) {
+  $baseColor: color-var($baseColor, "color", $colorType);
+
+  color: $baseColor;
+
+  @if $hover {
+    &:hover {
+      color: color-var($hover-baseColor, "hover-color", $colorType);
+    }
+  }
+
+  @if $action {
+    &:active {
+      color: color-var($active-baseColor, "active-color", $colorType);
+    }
+  }
+}
+
+@mixin colorArrt($colorType, $hover: true, $action: true, $disabled: true) {
+  color: color-var($fontColor, "color", $colorType);
+  background-color: color-var($backgroundColor, "backgroundColor", $colorType);
+  border-color: color-var($borderColor, "borderColor", $colorType);
+
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.5s;
+
+  @if $hover {
+    &:hover {
+      color: color-var($hover-fontColor, "hover-color", $colorType);
+      background-color: color-var($hover-backgroundColor, "hover-backgroundColor", $colorType);
+      border-color: color-var($hover-borderColor, "hover-borderColor", $colorType);
+    }
+  }
+
+  @if $action {
+    &:active {
+      color: color-var($active-fontColor, "active-color", $colorType);
+      background-color: color-var($active-backgroundColor, "active-backgroundColor", $colorType);
+      border-color: color-var($active-borderColor, "active-borderColor", $colorType);
+    }
+  }
+
+  @if $disabled {
+    @include disabled;
+  }
+}
+
+@mixin facade($type) {
+  @if ($type == contained) {
+    @include disabled;
+  }
+
+  @if ($type == outlined) {
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+
+    @include disabled(false);
+  }
+
+  @if ($type == text) {
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    @include disabled(false, false);
+  }
+}
+
+@mixin shape($type) {
+  @if ($type == rect) {
+    border-radius: borderRadius(rect);
+  }
+
+  @if ($type == roundRect) {
+    border-radius: borderRadius(roundRect);
+  }
+
+  @if ($type == circle) {
+    border-radius: borderRadius(circle);
+  }
+
+  @if ($type == round) {
+    border-radius: borderRadius(round);
+  }
+}

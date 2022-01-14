@@ -1,7 +1,23 @@
-@mixin font($size, $weight, $align: center) {
+@mixin font($size, $weight: normal, $align: center) {
   font-family: inherit;
   font-size: fontSize($size);
   font-weight: fontWeight($weight);
   line-height: lineHeight($size);
   text-align: $align;
+}
+
+@mixin ellipsis(
+  $overflow: hidden,
+  $textOverflow: ellipsis,
+  $whiteSpace: nowrap,
+  $wordBreak: normal,
+  $line: 1,
+  $orient: vertical
+) {
+  overflow: $overflow;
+  text-overflow: $textOverflow;
+  white-space: $whiteSpace;
+  word-break: $wordBreak;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: $orient;
 }

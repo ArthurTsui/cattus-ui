@@ -26,11 +26,11 @@
  * line-height
  */
 @function lineHeight($height) {
-  @if map-has-key($fontHeight, $height) {
-    @return map-get($fontHeight, $height);
+  @if map-has-key($lineHeight, $height) {
+    @return map-get($lineHeight, $height);
   }
 
-  @warn "Unknown `#{$key}` height in fontHeight.";
+  @warn "Unknown `#{$key}` height in lineHeight.";
   @return null;
 }
 
@@ -75,12 +75,12 @@
 /**
  * border-radius
  */
-@function borderRadius($size) {
-  @if map-has-key($borderRadius, $size) {
-    @return map-get($borderRadius, $size);
+@function borderRadius($type) {
+  @if map-has-key($borderRadius, $type) {
+    @return map-get($borderRadius, $type);
   }
 
-  @warn "Unknown `#{$key}` size in borderRadius.";
+  @warn "Unknown `#{$type}` type in borderRadius.";
   @return null;
 }
 
