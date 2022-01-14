@@ -1,17 +1,6 @@
 /* font
    ========================================================================== */
 /**
- * get fontStyle From Map
- */
-@function getFontStyle($map, $key) {
-  @if map-has-key($map, $key) {
-    @return map-get($map, $key);
-  }
-
-  @warn "Unknown `#{$key}` in `#{$map}`.";
-  @return null;
-}
-/**
  * font-size
  */
 @function fontSize($size) {
@@ -25,7 +14,7 @@
 /**
  * font-weight
  */
-@function fontSize($weight) {
+@function fontWeight($weight) {
   @if map-has-key($font-weight, $weight) {
     @return map-get($font-weight, $weight);
   }
@@ -36,7 +25,7 @@
 /**
  * line-height
  */
-@function fontSize($height) {
+@function lineHeight($height) {
   @if map-has-key($font-height, $height) {
     @return map-get($font-height, $height);
   }
@@ -47,17 +36,6 @@
 
 /* border
    ========================================================================== */
-/**
- * get radius From Map
- */
-@function getRadius($map, $key) {
-  @if map-has-key($map, $key) {
-    @return map-get($map, $key);
-  }
-
-  @warn "Unknown `#{$key}` in `#{$map}`.";
-  @return null;
-}
 /**
  * border-radius
  */
@@ -72,17 +50,6 @@
 
 /* space
    ========================================================================== */
-/**
- * get space From Map
- */
-@function getSpace($map, $key) {
-  @if map-has-key($map, $key) {
-    @return map-get($map, $key);
-  }
-
-  @warn "Unknown `#{$key}` in `#{$map}`.";
-  @return null;
-}
 /**
  * space
  */
@@ -119,116 +86,9 @@
   @warn "Unknown `#{$key}` in `#{$map}`.";
   @return null;
 }
-/**
- * baseColor
- */
-@function baseColor($key) {
-  @if map-has-key($baseColor, $key) {
-    @return map-get($baseColor, $key);
-  }
 
-  @warn "Unknown `#{$key}` color in baseColor.";
-  @return null;
-}
-/**
- * fontColor
- */
-@function fontColor($key) {
-  @if map-has-key($fontColor, $key) {
-    @return map-get($fontColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in fontColor.";
-  @return null;
-}
-/**
- * backgroundColor
- */
-@function backgroundColor($key) {
-  @if map-has-key($backgroundColor, $key) {
-    @return map-get($backgroundColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in backgroundColor.";
-  @return null;
-}
-/**
- * borderColor
- */
-@function borderColor($key) {
-  @if map-has-key($borderColor, $key) {
-    @return map-get($borderColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in borderColor.";
-  @return null;
-}
-/**
- * hover-fontColor
- */
-@function hover-fontColor($key) {
-  @if map-has-key($hover-fontColor, $key) {
-    @return map-get($hover-fontColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in hover-fontColor.";
-  @return null;
-}
-/**
- * hover-backgroundColor
- */
-@function hover-backgroundColor($key) {
-  @if map-has-key($hover-backgroundColor, $key) {
-    @return map-get($hover-backgroundColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in hover-backgroundColor.";
-  @return null;
-}
-/**
- * hover-borderColor
- */
-@function hover-borderColor($key) {
-  @if map-has-key($hover-borderColor, $key) {
-    @return map-get($hover-borderColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in hover-borderColor.";
-  @return null;
-}
-/**
- * active-fontColor
- */
-@function active-fontColor($key) {
-  @if map-has-key($active-fontColor, $key) {
-    @return map-get($active-fontColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in active-fontColor.";
-  @return null;
-}
-/**
- * active-backgroundColor
- */
-@function active-backgroundColor($key) {
-  @if map-has-key($active-backgroundColor, $key) {
-    @return map-get($active-backgroundColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in active-backgroundColor.";
-  @return null;
-}
-/**
- * active-borderColor
- */
-@function hactivever-borderColor($key) {
-  @if map-has-key($active-borderColor, $key) {
-    @return map-get($active-borderColor, $key);
-  }
-
-  @warn "Unknown `#{$key}` color in active-borderColor.";
-  @return null;
-}
+/* disabled
+   ========================================================================== */
 /**
  * disabled
  */
@@ -237,6 +97,6 @@
     @return map-get($disabled, $key);
   }
 
-  @warn "Unknown `#{$key}` color in disabled.";
+  @warn "Unknown `#{$key}` in disabled.";
   @return null;
 }

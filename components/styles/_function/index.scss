@@ -1,7 +1,7 @@
 @import "./getMap";
-@import "./cssVar";
+@import "./cssVarName";
 
-@function color-attr-var($map, $attr, $colorType) {
+@function color-var($map, $attr, $colorType) {
   $varNme: get-color-attr-var($attr, $colorType);
   $color: getColor($map, $colorType);
 
