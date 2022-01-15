@@ -1,6 +1,6 @@
-@mixin box($size) {
+@mixin lineBox($size) {
   min-width: minWidth($size);
-  min-height: minHeight($size);
+  height: minHeight($size);
   padding: spaceGroup($size);
 
   border-width: borderWidth(medium);

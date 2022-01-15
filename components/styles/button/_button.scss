@@ -7,7 +7,7 @@
    * size
    */
   &-lg {
-    @include box(large);
+    @include lineBox(large);
     @include font(large);
 
     .cat-btn-icon-img {
@@ -15,7 +15,7 @@
     }
   }
   &-md {
-    @include box(medium);
+    @include lineBox(medium);
     @include font(medium);
 
     .cat-btn-icon-img {
@@ -23,7 +23,7 @@
     }
   }
   &-sm {
-    @include box(small);
+    @include lineBox(small);
     @include font(small);
 
     .cat-btn-icon-img {
