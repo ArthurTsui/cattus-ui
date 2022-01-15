@@ -16,8 +16,6 @@
     justify-content: $justify;
     align-items: $align;
     flex-wrap: $wrap;
-
-    line-height: 1;
   }
 
   @if ($type == inline-flex) {
@@ -25,7 +23,5 @@
     justify-content: $justify;
     align-items: $align;
     flex-wrap: $wrap;
-
-    line-height: 1;
   }
 }

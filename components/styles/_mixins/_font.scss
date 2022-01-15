@@ -2,7 +2,9 @@
   font-family: inherit;
   font-size: fontSize($size);
   font-weight: fontWeight($weight);
-  line-height: lineHeight($size);
+  // line-height: lineHeight($size);
+
+  line-height: 1;
   text-align: $align;
 }
 
