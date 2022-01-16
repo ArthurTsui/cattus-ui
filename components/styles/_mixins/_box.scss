@@ -8,7 +8,7 @@
   border-color: transparent;
 }
 
-@mixin display($type, $justify: center, $align: center, $wrap: nowrap, $direction: row) {
+@mixin display($type, $justify: flex-start, $align: center, $wrap: nowrap, $direction: row) {
   display: $type;
 
   @if ($type == flex) {
@@ -24,4 +24,8 @@
     align-items: $align;
     flex-wrap: $wrap;
   }
+}
+
+@mixin gap($size) {
+  gap: space($size);
 }

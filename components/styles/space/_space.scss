@@ -1,0 +1,24 @@
+.cat-space {
+  @include display(inline-flex);
+
+  &-small {
+    @include gap(small);
+  }
+  &-medium {
+    @include gap(medium);
+  }
+  &-large {
+    @include gap(large);
+  }
+
+  &-vertical {
+    flex-direction: column;
+  }
+  &-horizontal {
+    flex-direction: row;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
