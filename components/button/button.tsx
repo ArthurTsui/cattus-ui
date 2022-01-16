@@ -1,5 +1,6 @@
-import classNames from 'classnames'
 import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode, CSSProperties, FC } from 'react'
+import classNames from 'classnames'
+import Space from '../space'
 
 export type ButtonType = 'primary' | 'danger' | 'success' | 'warning' | 'secondary' | 'default'
 export type ButtonFacade = 'contained' | 'outlined' | 'text'
@@ -51,15 +52,19 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
       <>
         {href ? (
           <a href={href} className={classes} style={style} {...rest}>
-            {typeof startIcon !== 'string' ? startIcon : <img src={startIcon} alt='' className='cat-btn-icon-img' />}
-            <span>{children}</span>
-            {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
+            <Space>
+              {typeof startIcon !== 'string' ? startIcon : <img src={startIcon} alt='' className='cat-btn-icon-img' />}
+              <span>{children}</span>
+              {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
+            </Space>
           </a>
         ) : (
           <button className={classes} type={htmlType} style={style} {...rest}>
-            {typeof startIcon === 'string' ? <img src={startIcon} alt='' className='cat-btn-icon-img' /> : startIcon}
-            <span>{children}</span>
-            {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
+            <Space>
+              {typeof startIcon === 'string' ? <img src={startIcon} alt='' className='cat-btn-icon-img' /> : startIcon}
+              <span>{children}</span>
+              {typeof endIcon === 'string' ? <img src={endIcon} alt='' className='cat-btn-icon-img' /> : endIcon}
+            </Space>
           </button>
         )}
       </>
