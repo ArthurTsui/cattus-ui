@@ -13,7 +13,7 @@ const files = [
   },
   {
     fileName: `${componentName}.tsx`,
-    content: `import React, { FC } from 'react'\nimport classNames from 'classnames'\n\nexport interface ${ComponentName}Props{}\n\nconst ${ComponentName}: FC<${ComponentName}Props> = (props:${ComponentName}Props) =>{\n\treturn <></>\n}\n\nexport default ${ComponentName}`
+    content: `import React, { FC, ReactNode } from 'react'\nimport classNames from 'classnames'\n\nexport interface ${ComponentName}Props{\nchildren?: ReactNode\n}\n\nconst ${ComponentName}: FC<${ComponentName}Props> = (props:${ComponentName}Props) =>{\nconst classes = classNames()\n\n\treturn <div className={classes}></div>\n}\n\nexport default ${ComponentName}`
   },
   {
     fileName: `__tests__/${componentName}.test.tsx`,
