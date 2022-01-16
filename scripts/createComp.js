@@ -9,11 +9,11 @@ const files = [
   {
     //入口文件
     fileName: 'index.tsx',
-    content: `import ${ComponentName} from './${componentName}'\n\nexport default ${ComponentName}`
+    content: `import ${ComponentName} from './${componentName}'\n\nexport type { ${ComponentName}Props } from './${componentName}'\n\nexport default ${ComponentName}`
   },
   {
     fileName: `${componentName}.tsx`,
-    content: `import React, { FC, ReactNode } from 'react'\nimport classNames from 'classnames'\n\nexport interface ${ComponentName}Props{\nchildren?: ReactNode\n}\n\nconst ${ComponentName}: FC<${ComponentName}Props> = (props:${ComponentName}Props) =>{\nconst classes = classNames()\n\n\treturn <div className={classes}></div>\n}\n\nexport default ${ComponentName}`
+    content: `import React, { FC, ReactNode } from 'react'\nimport classNames from 'classnames'\n\ninterface Base${ComponentName}Props{\n\tchildren?: ReactNode\n}\n\nexport type ${ComponentName}Props = Base${ComponentName}Props\n\nconst ${ComponentName}: FC<${ComponentName}Props> = (props:${ComponentName}Props) =>{\n\tconst classes = classNames()\n\n\treturn <div className={classes}></div>\n}\n\nexport default ${ComponentName}`
   },
   {
     fileName: `__tests__/${componentName}.test.tsx`,
