@@ -3,7 +3,6 @@ const fileSave = require('file-save')
 const uppercamelcase = require('uppercamelcase')
 
 const componentName = process.argv[2]
-// const ComponentName = componentName.replace(/^\S/, (s) => s.toUpperCase())
 const ComponentName = uppercamelcase(componentName)
 const componentPath = path.resolve(__dirname, '../components', componentName)
 const files = [
