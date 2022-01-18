@@ -19,3 +19,18 @@
   $prefix: get-css-prefix();
   @return #{$prefix}-#{get-color-var-name($attr, $colorType)};
 }
+
+/**
+ * gap-var-name
+ */
+@function get-gap-var-name($attr) {
+  @return gap-#{$attr};
+}
+
+/**
+ * gap-var
+ */
+@function get-gap-var($attr) {
+  $prefix: get-css-prefix();
+  @return #{$prefix}-#{get-gap-var-name($attr)};
+}

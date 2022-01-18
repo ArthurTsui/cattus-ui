@@ -89,7 +89,7 @@
 /**
  * space
  */
-@function space($size) {
+@function getSpace($size) {
   @if map-has-key($space, $size) {
     @return map-get($space, $size);
   }

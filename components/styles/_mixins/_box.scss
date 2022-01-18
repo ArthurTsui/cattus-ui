@@ -25,7 +25,3 @@
     flex-wrap: $wrap;
   }
 }
-
-@mixin gap($size) {
-  gap: space($size);
-}

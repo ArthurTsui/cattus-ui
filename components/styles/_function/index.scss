@@ -7,3 +7,10 @@
 
   @return var($varNme, $color);
 }
+
+@function gap-var($size) {
+  $varNme: get-gap-var($size);
+  $space: getSpace($size);
+
+  @return var($varNme, $space);
+}

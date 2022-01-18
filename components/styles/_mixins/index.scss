@@ -121,3 +121,7 @@
     border-radius: borderRadius(round);
   }
 }
+
+@mixin gap($size) {
+  gap: gap-var($size);
+}
