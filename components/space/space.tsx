@@ -2,11 +2,11 @@ import React, { FC, ReactNode } from 'react'
 import classNames from 'classnames'
 
 export type SpaceType = 'small' | 'medium' | 'large'
-export type Direction = 'vertical' | 'horizontal'
+export type DirectionType = 'vertical' | 'horizontal'
 
 interface BaseSpaceProps {
   type?: SpaceType
-  direction?: Direction
+  direction?: DirectionType
   wrap?: boolean
   children?: ReactNode
 }
