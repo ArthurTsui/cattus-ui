@@ -1,5 +1,5 @@
 import ButtonGroup from './buttonGroup'
 
-export type { ButtonGroupProps, GapType, DirectionType } from './buttonGroup'
+export type { ButtonGroupProps, ButtonGroupGapSize, ButtonGroupDirection, ButtonGroupSize } from './buttonGroup'
 
 export default ButtonGroup
