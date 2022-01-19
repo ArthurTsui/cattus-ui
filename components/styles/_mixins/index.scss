@@ -3,16 +3,16 @@
 
 @mixin disabled($backgroundColor: true, $borderColor: true) {
   &[disabled] {
-    color: disabled(color);
+    color: color-var($disabled, "disabled-color", color);
 
     @if $backgroundColor {
-      background-color: disabled(background-color);
+      background-color: color-var($disabled, "disabled-backgroundColor", background-color);
     } @else {
       background-color: transparent;
     }
 
     @if $borderColor {
-      border-color: disabled(border-color);
+      border-color: color-var($disabled, "disabled-borderColor", border-color);
     } @else {
       border-color: transparent;
     }
@@ -123,5 +123,5 @@
 }
 
 @mixin gap($size) {
-  gap: gap-var($size);
+  gap: space($size);
 }
