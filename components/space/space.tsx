@@ -2,11 +2,11 @@ import React, { FC, ReactNode } from 'react'
 import classNames from 'classnames'
 
 export type SpaceType = 'small' | 'medium' | 'large'
-export type DirectionType = 'vertical' | 'horizontal'
+export type SpaceDirection = 'vertical' | 'horizontal'
 
 interface BaseSpaceProps {
   type?: SpaceType
-  direction?: DirectionType
+  direction?: SpaceDirection
   wrap?: boolean
   children?: ReactNode
 }
@@ -16,8 +16,11 @@ export type SpaceProps = BaseSpaceProps
 const Space: FC<SpaceProps> = (props: SpaceProps) => {
   const { type, direction, wrap, children } = props
 
+  const sizeClassNameMap = { large: 'lg', medium: 'md', small: 'sm' }
+  const typCls = type ? sizeClassNameMap[type] : undefined
+
   const classes = classNames('cat-space', {
-    [`cat-space-${type}`]: type,
+    [`cat-space-${typCls}`]: typCls,
     [`cat-space-${direction}`]: direction,
     [`cat-space-${wrap}`]: wrap
   })
