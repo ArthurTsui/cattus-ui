@@ -22,17 +22,6 @@
   @warn "Unknown `#{$key}` weight in fontWeight.";
   @return null;
 }
-/**
- * line-height
- */
-@function lineHeight($height) {
-  @if map-has-key($lineHeight, $height) {
-    @return map-get($lineHeight, $height);
-  }
-
-  @warn "Unknown `#{$key}` height in lineHeight.";
-  @return null;
-}
 
 /* width | height
    ========================================================================== */
@@ -89,7 +78,7 @@
 /**
  * space
  */
-@function getSpace($size) {
+@function space($size) {
   @if map-has-key($space, $size) {
     @return map-get($space, $size);
   }
@@ -120,19 +109,5 @@
   }
 
   @warn "Unknown `#{$key}` in `#{$map}`.";
-  @return null;
-}
-
-/* disabled
-   ========================================================================== */
-/**
- * disabled
- */
-@function disabled($key) {
-  @if map-has-key($disabled, $key) {
-    @return map-get($disabled, $key);
-  }
-
-  @warn "Unknown `#{$key}` in disabled.";
   @return null;
 }
