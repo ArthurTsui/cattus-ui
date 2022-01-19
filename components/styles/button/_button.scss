@@ -19,7 +19,7 @@
     @include font(medium);
 
     .cat-btn-icon-img {
-      height: fontSize(large);
+      height: fontSize(medium);
     }
   }
   &-sm {
@@ -27,7 +27,7 @@
     @include font(small);
 
     .cat-btn-icon-img {
-      height: fontSize(large);
+      height: fontSize(small);
     }
   }
 
