@@ -4,7 +4,7 @@ import Space from '../space'
 
 export type ButtonType = 'primary' | 'danger' | 'success' | 'warning' | 'secondary' | 'default'
 export type ButtonFacade = 'contained' | 'outlined' | 'text'
-export type ButtonSize = 'large' | 'middle' | 'small'
+export type ButtonSize = 'large' | 'medium' | 'small'
 export type ButtonShape = 'rect' | 'roundRect' | 'circle' | 'round'
 export type HtmlType = 'submit' | 'reset' | 'button' | undefined
 
@@ -30,7 +30,7 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps> // butt
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const { type, facade, size, shape, htmlType, startIcon, endIcon, children, href, className, style, ...rest } = props
 
-  const sizeClassNameMap = { large: 'lg', middle: 'md', small: 'sm' }
+  const sizeClassNameMap = { large: 'lg', medium: 'md', small: 'sm' }
   const sizeCls = size ? sizeClassNameMap[size] : undefined
 
   const facadeTypeCls = facade && type ? facade + type.replace(/^\S/, (s) => s.toUpperCase()) : undefined
@@ -90,7 +90,7 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
 Button.defaultProps = {
   type: 'primary',
   facade: 'contained',
-  size: 'middle',
+  size: 'medium',
   shape: 'roundRect',
   htmlType: 'button'
 }
