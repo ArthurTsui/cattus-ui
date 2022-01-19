@@ -1,13 +1,13 @@
 .cat-space {
   @include display(inline-flex);
 
-  &-small {
+  &-sm {
     @include gap(small);
   }
-  &-medium {
+  &-md {
     @include gap(medium);
   }
-  &-large {
+  &-lg {
     @include gap(large);
   }
 
