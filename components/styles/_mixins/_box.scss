@@ -5,7 +5,6 @@
 
   border-width: borderWidth(medium);
   border-style: solid;
-  border-color: transparent;
 }
 
 @mixin display($type, $justify: flex-start, $align: center, $wrap: nowrap, $direction: row) {
