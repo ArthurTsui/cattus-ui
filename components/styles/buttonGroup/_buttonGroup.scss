@@ -1,13 +1,50 @@
 .cat-btn-group {
   @include display(inline-flex);
 
-  &-small {
+  /**
+   * size
+   */
+  &-lg {
+    > [class^="cat-btn"] {
+      @include lineBox(large);
+      @include font(large);
+
+      .cat-btn-icon-img {
+        height: fontSize(large);
+      }
+    }
+  }
+  &-md {
+    > [class^="cat-btn"] {
+      @include lineBox(medium);
+      @include font(medium);
+
+      .cat-btn-icon-img {
+        height: fontSize(medium);
+      }
+    }
+  }
+  &-sm {
+    > [class^="cat-btn"] {
+      @include lineBox(small);
+      @include font(small);
+
+      .cat-btn-icon-img {
+        height: fontSize(small);
+      }
+    }
+  }
+
+  /**
+   * gap-size
+   */
+  &-gap-sm {
     @include gap(small);
   }
-  &-medium {
+  &-gap-md {
     @include gap(medium);
   }
-  &-large {
+  &-gap-lg {
     @include gap(large);
   }
 
